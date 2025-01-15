@@ -1,0 +1,1884 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--body-font, 'Gill Sans', sans-serif); /* Default body font */
+  background-color: var(--primary-bg-color); /* Background color */
+  color: var(--text-color); /* Default text color */
+  line-height: 1.2; /* Consistent line height */
+}
+
+/* CSS Variables */
+:root {
+  /* Colors */
+  --primary-bg-color: #F7F4EF; /* Light background color */
+  --secondary-bg-color: #F0EADF; /* Banner background color */
+  --primary-text-color: #181D27; /* Main text color */
+  --navbar-bg-color: #1f1f1f; /* Navbar background color */
+  --alt-text-color-1: #757b86; /* Alternate text color 1 */
+  --alt-text-color-2: #0a0d12; /* Alternate text color 2 */
+  --alt-text-color-3: #d8dde5; /* Alternate text color 3 */
+
+  /* Fonts */
+  --heading-font: 'Montserrat', sans-serif; /* Heading font */
+  --body-font: 'Gill Sans', sans-serif; /* Body font */
+}
+
+/* General Element Styles */
+a {
+  text-decoration: none; /* Remove default underlines from links */
+  color: inherit; /* Inherit text color */
+}
+
+ul, ol {
+  list-style: none; /* Remove default list styling */
+}
+
+
+/* Hero Container (Combined Nav and Hero) */
+.hero-container {
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+  display: flex;
+  flex-direction: column; /* Stack nav and hero vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+/* Navbar Styles */
+.header {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 8px solid blue; */
+  z-index: 100;
+  background-color: #1f1f1f;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  width: 100%; /* Full-width navbar */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center the logo by default */
+  padding: 24px 20px;
+  gap: 30px;
+  margin: 0 auto;
+  /* border: 3px solid red; */
+}
+
+/* Navbar Logo */
+.nav-logo {
+  width: 100%; /* Responsive width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 420px; /* Maximum logo width */
+  align-self: center;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex; /* Hidden by default */
+  flex-direction: row; /* Stack links vertically */
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  width: 100%; /* Full-width dropdown */
+  z-index: 1000; /* Above other elements */
+}
+
+.nav-links a {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  text-transform: uppercase; /* Uppercase text */
+  color: var(--secondary-bg-color); /* Link text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Font size */
+  letter-spacing: 2px; /* Space between letters */
+}
+
+.nav-links.active {
+  display: flex; /* Show links when active */
+}
+
+.nav-links a:hover {
+  opacity: 0.8; /* Hover effect */
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  width: 25px; /* Icon width */
+  height: auto; /* Icon height */
+  position: relative;
+  cursor: pointer; /* Pointer cursor */
+  z-index: 101; /* Above other elements */
+}
+
+/* Hamburger Lines (Top, Middle, Bottom) */
+.hamburger-menu::before, /* Top Line */
+.hamburger-menu::after,  /* Bottom Line */
+.hamburger-menu div {    /* Middle Line */
+  content: '';
+  position: absolute;
+  width: 90%; /* Full width */
+  height: 1.75px; /* Line thickness */
+  background-color: var(--secondary-bg-color); /* Line color */
+  transition: all 0.3s ease; /* Smooth transitions */
+  transform-origin: center; /* Center rotation */
+}
+
+/* Top Line */
+.hamburger-menu::before {
+  top: 50%; /* Center vertically */
+  transform: translateY(-9px); /* Position above middle */
+}
+
+/* Middle Line */
+.hamburger-menu div {
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+}
+
+/* Bottom Line */
+.hamburger-menu::after {
+  top: 50%; /* Center vertically */
+  transform: translateY(7px); /* Position below middle */
+}
+
+/* Cross Icon State for Hamburger Menu */
+.hamburger-menu.active::before {
+  transform: rotate(45deg) translateY(0px); /* Rotate top line */
+}
+
+.hamburger-menu.active {
+  position: absolute; /* Maintain position */
+  top: 32px;
+  right: 20px; /* Align with original position */
+}
+
+.hamburger-menu.active div {
+  opacity: 0; /* Hide middle line */
+}
+
+.hamburger-menu.active::after {
+  transform: rotate(-45deg) translateY(0px); /* Rotate bottom line */
+}
+
+/* .instagram-link {
+  display: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #F7F4EF;
+  text-decoration: none;
+  padding: 10px;
+  transition: all 0.3s ease;
+} */
+
+/* Hide "IN" when navbar or hamburger menu is active */
+/* .nav.active .instagram-link,
+.hamburger-menu.active + .instagram-link {
+  opacity: 0;
+  pointer-events: none;
+} */
+
+/* Hero Section Styles */
+.hero-container {
+  position: relative;
+  top: 0;
+}
+
+.hero {
+  height: 100%; /* Full height of the .hero-container */
+  overflow: hidden; /* Ensure no overflow for animations */
+  display: flex;
+  justify-content: center; /* Center hero content vertically */
+  align-items: center; /* Center hero content horizontally */
+}
+
+/* Background Animation */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the entire width */
+  height: 100%; /* Cover the entire height */
+  background-size: cover; /* Scale image to cover */
+  background-position: center; /* Center background image */
+  animation: bgAnimation 30s infinite; /* Infinite animation */
+}
+
+/* Keyframes for Image Animation */
+@keyframes bgAnimation {
+  0% { background-image: url('/images/hero/Hero-Amouage.png'); }
+  20% { background-image: url('/images/hero/Hero-Crivelli.png'); }
+  4% { background-image: url('/images/hero/Hero-Nishane.png'); }
+  60% { background-image: url('/images/hero/Hero-Kosmala.png'); }
+  80% { background-image: url('/images/hero/Hero-Signature.png'); }
+  100% { background-image: url('/images/hero/Hero-Amouage.png'); } /* Loop back */
+}
+
+/* Add Webkit Prefix */
+@-webkit-keyframes bgAnimation {
+  0% { background-image: url('/images/hero/Hero-Amouage.png'); }
+  30% { background-image: url('/images/hero/Hero-Crivelli.png'); }
+  45% { background-image: url('/images/hero/Hero-Nishane.png'); }
+  60% { background-image: url('/images/hero/Hero-Kosmala.png'); }
+  75% { background-image: url('/images/hero/Hero-Signature.png'); }
+  90% { background-image: url('/images/hero/Hero-Vilhelm.png'); }
+  100% { background-image: url('/images/hero/Hero-Amouage.png'); }
+}
+
+/* Hero Content */
+.hero-content {
+  position: absolute; /* Allows precise positioning */
+  bottom: 50px; /* Distance from the bottom of the hero */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center alignment for horizontal positioning */
+  width: 100%; /* Ensure it doesn’t stretch unnecessarily */
+  max-width: 900px; /* Optional: Limit the maximum width */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-end; /* Position content towards the bottom */
+  align-items: center; /* Center align the content horizontally */
+  gap: 16px; /* Space between the message and button */
+
+}
+
+/* Hero Message */
+.hero-message {
+  font-family: var(--heading-font);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 42px; /* 126.667% of font size */
+  color: var(--secondary-bg-color);
+  text-align: center; /* Align text to the left */
+}
+
+/* Hero Button */
+.hero-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 28px; /* Padding inside button */
+  background: var(--secondary-bg-color); /* Default background color */
+  color: var(--text-color); /* Default text color */
+  text-decoration: none; /* Remove underline */
+  font-family: var(--heading-font); /* Use heading font */
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: 1px solid transparent; /* Initially no border */
+  gap: 8px;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button Hover Effect */
+.hero-button:hover {
+  background: var(--navbar-bg-color); /* Change background color */
+  color: var(--secondary-bg-color); /* Change text color */
+  border-color: #EEE5DA; /* Add a stroke */
+  cursor: pointer;
+}
+
+/* Brands Banner */
+.heading-banner {
+  max-width: 1512px; /* Limits width to 1512px */
+  width: 100%; /* Makes it responsive to smaller screens */
+  height: 172px;
+  background: var(--secondary-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Align heading and link on opposite sides */
+  align-items: center;
+  gap: 8px; /* Gap between elements */
+  margin: 0 auto; /* Centers the banner on the page */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Our Brands Styles */
+
+/* Brands Heading */
+.brands-heading {
+  font-family: var(--heading-font); /* Assuming heading font is set */
+  font-size: 32px; /* Adjust size as needed */
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-text-color);/* Heading text color */
+  margin: 0; /* Remove default margin */
+}
+
+.heading-banner a {
+  font-family: var(--heading-font);
+  font-weight: 400;
+}
+
+
+/* Carousel Section */
+.carousel {
+  width: 100%;
+  background-color: var(--primary-bg-color); /* Matches your website's background */
+  padding: 72px 0;
+  touch-action: pan-x; /* Allow horizontal touch gestures */
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  display: flex;
+  flex-direction: column; /* Aligns track and arrows vertically */
+  align-items: center; /* Centers arrows horizontally */
+  position: relative; /* For positioning arrows */
+  max-width: 1512px; /* Matches the design width */
+  margin: 0 auto; /* Center the carousel on the page */
+  overflow: hidden; /* Hide extra cards */
+  touch-action: pan-x; /* Ensure horizontal swipe gestures are allowed */
+}
+
+/* Carousel Track */
+.carousel-track {
+  overflow-x: auto; /* Enable horizontal scrolling for the carousel */
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  display: flex;
+  gap: 16px; /* Space between cards */
+  transition: transform 0.5s ease; /* Smooth scrolling */
+  will-change: transform; /* Optimize performance */
+  width: max-content; /* Prevent wrapping issues */
+}
+
+/* Carousel Card */
+.carousel-card {
+  position: relative; /* For positioning inner elements */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 350px;
+  height: 410px;
+  transition: all 0.10s ease; /* Smooth transitions */
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Brand Image */
+.brand-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fit without distortion */
+  transition: transform 0.3s ease; /* Smooth scale effect */
+}
+
+/* Darken card on hover */
+.carousel-card:hover .brand-image {
+  filter: brightness(0.7);
+}
+
+/* Brand Info Container */
+.brand-info {
+  position: absolute; /* Overlay on top of the card */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the container */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Space between brand name and link */
+  opacity: 0; /* Hidden initially */
+  transition: opacity 0.3s ease; /* Smooth fade-in effect */
+  z-index: 2; /* Ensure it appears above the image */
+}
+
+/* Show brand info on hover */
+.carousel-card:hover .brand-info {
+  opacity: 1; /* Make visible */
+}
+
+/* Brand Name */
+.brand-name {
+  font-family: var(--heading-font);
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--secondary-bg-color);
+  text-align: center;
+}
+
+/* View Website Link */
+.view-website-link {
+  font-family: var(--heading-font);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--secondary-bg-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: var(--secondary-bg-color) 0.3s ease, transform 0.3s ease;
+  /* border: 3px solid red; */
+}
+
+.view-website-link:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Arrows */
+/* Carousel Arrows */
+.carousel .carousel-arrow {
+  position: absolute;
+  top: 80%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: 1px solid #F7F4EF;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.left-arrow {
+  left: 10px; /* Position the left arrow */
+}
+
+.right-arrow {
+  right: 10px; /* Position the right arrow */
+}
+
+
+
+/* Retail Section */
+.retail-section {
+  max-width: 1512px; /* Matches design specifications */
+  width: 100%; /* Ensures it spans the container */
+  margin: 0 auto; /* Centers the section */
+  background-color: var(--primary-bg-color) /* Background color */
+}
+
+/* Retail Container */
+.retail-container {
+  display: flex;
+  flex-direction: column; /* Stack heading and grid */
+  padding: 72px 148px; /* Align with carousel section */
+  gap: 60px; /* Space between heading and grid */
+  background-color: var(--primary-bg-color) /* Background color */
+}
+
+/* Heading Container */
+.heading-container {
+  text-align: center; /* Align heading and tagline */
+}
+
+.retail-logo {
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.retail-description {
+  font-family: var(--body-font);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--primary-text-color);
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 40px; /* Space between cards */
+  width: 100%; /* Full width of the section */
+}
+
+/* Individual Small Card */
+.small-card {
+  display: flex;
+  flex-direction: column; /* Stack image and text */
+  align-items: center;
+  text-align: center; /* Center-align text */
+  gap: 10px; /* Space between image and description */
+
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+  overflow: hidden; /* Ensure overlay stays within bounds */
+  border-radius: 4px; /* Optional: Rounded corners */
+}
+
+/* Hover Effects */
+.image-container:hover {
+  filter: brightness(0.9);
+}
+
+.image-container:hover .small-card-image {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Small Card Image */
+.small-card-image {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.7);
+  object-fit: cover; /* Ensures images fit nicely */
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.mall-description {
+  display: flex;
+  flex-direction: column; /* Stack name and country vertically */
+  gap: 2px; /* Adjust the spacing between name and country */
+}
+
+.mall-name {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary-text-color);
+}
+
+.mall-country {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--alt-text-color-1);
+}
+
+
+/* Scrolling Logo Bar Section */
+.scrolling-logo-bar {
+  width: 1512px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* gap: 3px; */
+  overflow: hidden; /* Hide logos outside the visible area */
+  background-color: var(--navbar-bg-color); /* Match the dark background */
+}
+
+/* Logo Track */
+.logo-track {
+  display: flex;
+  width: max-content; /* Let the track width adapt to the content */
+  height: 125px;
+  align-items: center;
+  gap: 80px; /* Adjust this value to increase/decrease the spacing */
+  animation: scroll 50s linear infinite; /* Continuous scrolling */
+}
+
+/* Individual Logos */
+.logo {
+  flex-shrink: 0;
+  width: 250px;
+  height: 250px;
+
+}
+
+.super-tiny {
+  width: 30px;
+  height: 30px;
+}
+
+.tiny {
+  width: 75px;
+  height: 75px;
+}
+
+.logo-xxsmall {
+  width: 100px;
+  height: 100px;
+}
+
+.logo-xsmall {
+  width: 125px;
+  height: 125px;
+}
+
+.logo-small {
+  width: 200px;
+  height: 200px;
+}
+
+
+/* Scrolling Animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-30%); /* Scroll entire width of the content */
+  }
+}
+
+/* Footer Section */
+.footer-landing {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-bg-color);
+  /* border-top: 1px solid #101010; */
+  padding: 75px 100px 30px 100px; /* Vertical and horizontal padding */
+  gap: 32px; /* Space between footer sections */
+}
+
+/* Navigation Links Section */
+.footer-nav {
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+  gap: 24px; /* Space between links */
+}
+
+.footer-nav a {
+  font-family: var(--heading-font); /* Consistent font */
+  font-size: 14px; /* Default font size for navigation links */
+  font-weight: 400; /* Medium weight */
+  text-transform: uppercase;
+  color: var(--alt-text-color-2); /* Default color */
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline; /* Hover effect */
+}
+
+/* Connect With Us Section */
+.footer-connect {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Space between text and icons */
+}
+
+.footer-connect span {
+  font-family: var(--body-font);
+  font-size: 16px; /* Font size for "Connect With Us" text */
+  font-weight: 400; /* Regular weight */
+  color: var(--alt-text-color-2); /* Text color */
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px; /* Space between icons */
+}
+
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Copyright Section */
+.footer-copyright {
+  font-family: var(--heading-font);
+  font-size: 14px; /* Font size for copyright text */
+  font-weight: 400; /* Regular weight */
+  color: var(--alt-text-color-2); /* Text color */
+  text-align: center;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between; /* Space between logo and sitemap */
+  align-items: center;
+  width: 100%; /* Full width for spacing */
+}
+
+.footer-logo {
+  width: 200px; /* Adjust logo width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure logo fits nicely */
+}
+
+/* About Page Styles */
+
+.about-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  padding: 64px 148px 0 148px;
+}
+
+.banner-image {
+  max-width: 1200px; /* Set exact width */
+  height: 418px; /* Set exact height */
+  object-fit: cover; /* Ensures the image fills the dimensions without distortion */
+}
+
+/* About Content Section */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 68px 148px 68px 148px;
+  font-family: "Gill Sans";
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  text-align: center;
+  gap: 20px;
+
+}
+
+.content-container h2 {
+  font-family: var(--heading-font);
+  font-size: 24px; /* Adjust as per design */
+  line-height: 28px; /* Adjust as per design */
+  font-weight: 400; /* Adjust as per design */
+  text-transform: uppercase;
+  color: var(--primary-text-color); /* Example color */
+}
+
+.about-content p, .leadership-content p, .expertise-content p {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 300;
+  color: var(--primary-text-color); /* Example color */
+  text-align: left;
+}
+
+.leadership-banner, .expertise-banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+
+}
+
+ .leadership-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 68px 148px 68px 148px;
+
+}
+
+ .expertise-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 68px 148px 68px 148px;
+  /* border-bottom: 1px solid black; */
+}
+
+/* Expertise Carousel Container */
+ .expertise-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Adjust based on your layout */
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 148px 100px 148px;
+}
+
+/* Carousel Track */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 16px; /* Space between cards */
+  overflow: hidden;
+}
+
+/* Carousel Cards */
+.carousel-card {
+  width: 365px; /* Fixed width for the card */
+  height: 473px; /* Fixed height for the card */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  position: relative;
+  overflow: hidden; /* Hide overflow */
+  display: flex; /* Ensure the card contents are contained */
+  align-items: center; /* Center the image vertically */
+  justify-content: center; /* Center the image horizontally */
+}
+
+.carousel-card img {
+  width: 100%; /* Image should cover the width of the card */
+  height: 100%; /* Image should cover the height of the card */
+  object-fit: cover; /* Ensures the image fills without distortion */
+}
+
+/* Arrows */
+.expertise-carousel .carousel-arrow {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--secondary-bg-color);
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.dot.active {
+  background: var(--primary-text-color);
+}
+
+input[type="radio"] {
+  display: none; /* Hide radio buttons */
+}
+
+input#slide1:checked ~ .carousel-track {
+  transform: translateX(0);
+}
+
+input#slide2:checked ~ .carousel-track {
+  transform: translateX(-100%);
+}
+
+input#slide3:checked ~ .carousel-track {
+  transform: translateX(-200%);
+}
+
+
+
+/* Contact Page Styles */
+.contact-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1512px;
+  width: 100%;
+  height: auto;
+  padding: 64px 148px 0 148px;
+}
+
+.banner-image {
+  width: 100%; /* Set exact width */
+  height: 500px; /* Set exact height */
+  object-fit: cover; /* Ensures the image fills the dimensions without distortion */
+}
+
+
+/* Contact Section */
+.contact-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px; /* Space between heading and paragraph */
+  padding: 56px 148px 0px 148px;
+  /* padding-bottom: 30px; */
+}
+
+.contact-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Vertically align text and button */
+  gap: 24px; /* Space between the message and the button */
+  height: auto; /* Adjust height to fit content */
+}
+
+.contact-content h2 {
+  font-family: var(--heading-font); /* Assuming heading font is set */
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--primary-text-color);/* Heading text color */
+  margin: 0; /* Remove default margin */
+}
+
+.contact-message p {
+  font-family: var(--body-font);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px; /* Ensure consistency with the rest of the text */
+  color: var(--text-color);/* Heading text color */
+  text-align: left;
+}
+
+.contact-message button {
+  color: var(--text-color);/* Heading text color */
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);/* Heading text color */
+  padding: 16px 60px;
+  border: 1px solid var(--alt-text-color-2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-content button:hover {
+  background-color: var(--navbar-bg-color);
+  color:  var(--secondary-bg-color);
+}
+
+/* Careers Section */
+.careers-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Space between heading and paragraph */
+  /* border: 3px solid blue; */
+  padding: 56px 148px 0 148px;
+
+}
+
+.careers-content h2 {
+  font-family: var(--heading-font); /* Assuming heading font is set */
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--primary-text-color);/* Heading text color */
+  margin: 0; /* Remove default margin */
+}
+
+.careers-content p {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px; /* Ensure consistency with the rest of the text */
+  color: var(--text-color);
+  text-align: left;
+}
+
+/* Global Presence Banner Section */
+
+.global-presence-banner {
+  width: 100%; /* Makes it responsive to smaller screens */
+  /* height: 140px; */
+  background: var(--primary-bg-color);
+  display: flex;
+  flex-direction: column;
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid black; */
+  justify-content: start;
+  align-items: start;
+  text-align: left;
+  gap: 22px; /* Gap between elements */
+  margin: 0 auto; /* Centers the banner on the page */
+  flex-shrink: 0; /* Prevent shrinking */
+  padding: 56px 148px 56px 148px;
+}
+
+.global-presence-banner h2 {
+  font-family: var(--heading-font); /* Assuming heading font is set */
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--primary-text-color);/* Heading text color */
+  margin: 0; /* Remove default margin */
+  padding-bottom: 12px;
+}
+
+.global-presence-banner p {
+  font-family: var(--body-font);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px; /* Ensure consistency with the rest of the text */
+  text-align: center;
+  color: var(--primary-text-color);
+}
+
+/* Global Locations Section */
+.global-locations {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0px; /* Match padding with other sections */
+}
+
+.global-locations ul {
+  list-style: none; /* Remove default list styling */
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Space between addresses */
+}
+
+.address-list {
+max-width: 1200px;
+width: 100%;
+}
+
+.global-locations li {
+  font-family: var(--body-font);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--primary-text-color);
+  border-bottom: 1px solid var(--alt-text-color-3);
+  padding-bottom: 12px;
+}
+
+/* Brands */
+/* General Styles */
+section.brands {
+  padding: 50px 20px;
+}
+
+.brands-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brands-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.brands-heading h1 {
+  font-size: 1.75rem;
+  font-family: var(--heading-font);
+  font-weight: 400;
+  color: var(--primary-text-color, #181D27);
+  margin-bottom: 10px;
+}
+
+.brands-heading p {
+  font-size: 1rem;
+  font-family: var(--heading-font);
+  font-weight: 400;
+  color: var(--alt-text-color-2);
+}
+
+/* Gallery Grid */
+.brands-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Brand Card */
+.brand-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.brand-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease; /* Smooth transition */
+}
+
+.brand-card:hover img {
+  filter: brightness(0.7); /* Adjust brightness (0.7 = darker) */
+}
+
+/* Link on Hover */
+.brand-website-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  padding: 10px 20px;
+  color: var(--primary-bg-color, #F7F4EF);
+  text-decoration: none;
+  font-family: var(--heading-font);
+  font-size: 1rem;
+  font-weight: 300;
+  border-radius: 5px;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  opacity: 0;
+}
+
+.brand-card:hover .brand-website-link {
+  display: block;
+  opacity: 1;
+}
+
+
+/* Home Page Media Queries-Tablet */
+/* Tablets (600px - 1024px) *//* General Adjustments */
+@media (min-width: 600px) and (max-width: 1024px) {
+/* General Adjustments */
+body {
+  font-size: 16px; /* Slightly larger font for better readability */
+  line-height: 1.5;
+}
+/* Navbar */
+/* Navbar Adjustments */
+nav {
+  padding: 40px 50px; /* Adjust padding for tablets */
+  flex-direction: column; /* Align logo and links in a row */
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center; /* Vertically align items */
+}
+
+/* Logo */
+.nav-logo {
+  max-width: 275px; /* Resize logo for tablets */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none; /* Hide hamburger menu on tablets and larger screens */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex; /* Always visible on tablets */
+  flex-direction: row; /* Align links horizontally */
+  gap: 30px; /* Adjust spacing between links */
+}
+
+.nav-links a {
+  text-transform: uppercase; /* Ensure uniform appearance */
+  letter-spacing: 1px; /* Adjust letter spacing for readability */
+  padding: 0; /* Remove extra padding */
+  font-size: 16px; /* Standardize font size for tablet */
+}
+
+/* Hero Adjustments */
+.hero-bg {
+  animation: none; /* Disable animation */
+  background-image: url('/images/hero/Hero-Amouage.png'); /* Static fallback image */
+}
+
+.hero {
+  height: 100vh; /* Reduce height to fit smaller screens */
+}
+
+.hero-content {
+  padding: 0;
+}
+
+.hero-message {
+    font-size: 28px; /* Reduce text size */
+    line-height: 36px;
+}
+
+.hero-button {
+    padding: 12px 20px; /* Reduce button padding */
+    font-size: 14px;
+}
+
+/* Heading Banner Adjustments */
+.heading-banner {
+  height: 150px;
+}
+
+/* Hero Carousel Adjustments */
+.carousel-wrapper {
+  max-width: 100%; /* Allow full width for smaller screens */
+}
+
+.carousel-card {
+  width: 300px; /* Narrower cards for better fit */
+  height: 400px;
+}
+
+.carousel-arrow {
+display: block; /* Hide arrows on smaller screens */
+}
+
+/* Grid Layout for Retail Section */
+.grid-container {
+  grid-template-columns: repeat(2, 1fr); /* Show two cards per row */
+  gap: 24px; /* Reduce spacing */
+}
+
+.small-card {
+  gap: 6px; /* Reduce spacing between image and text */
+  padding: 5px; /* Adjust padding for better fit */
+}
+
+/* Retail Section Adjustments */
+.retail-logo {
+  width: 200px;
+}
+
+.retail-container {
+  padding: 40px 148px; /* Align with carousel section */
+  gap: 24px;
+}
+
+  .retail-description {
+    font-size: 16px; /* Smaller font size for tablets */
+    line-height: 24px;
+  }
+
+  /* Scrolling Logo Bar Adjustments */
+  .scrolling-logo-bar {
+    height: 100px;
+  }
+
+  /* Footer Adjustments */
+  .footer-landing {
+    padding: 50px 20px; /* Reduce padding */
+}
+
+.footer-nav {
+    flex-direction: column; /* Stack links vertically */
+    gap: 12px; /* Reduce spacing */
+}
+
+.footer-bottom {
+    flex-direction: column; /* Stack logo and sitemap */
+    gap: 16px; /* Add space between items */
+}
+
+.footer-logo {
+    max-width: 150px; /* Scale down logo size */
+}
+
+}
+
+/* Home Page Media Queries-Mobile */
+/* Tablets (600px - 1024px) *//* General Adjustments */
+@media (max-width: 599px) {
+  /* General Adjustments */
+  body {
+    font-size: 16px; /* Slightly larger font for better readability */
+    line-height: 1.5;
+  }
+  /* Navbar */
+  /* Navbar Adjustments */
+  nav {
+      display: flex;
+      flex-direction: row; /* Align logo and hamburger menu horizontally */
+      justify-content: center; /* Space between logo and menu */
+      align-items: center;
+      padding: 50px 0px;  /* Adjust padding for smaller screens */
+      position: relative; /* Enable absolute positioning inside the navbar */
+      gap: 0;
+  }
+  /* Logo */
+  .nav-logo {
+    max-width: 200px; /* Reduce logo size for mobile */
+    height: auto;
+    position: absolute;
+    right: 90px;
+    top: 45px
+}
+
+  /* Hamburger Menu */
+  .hamburger-menu {
+    position: absolute;
+    right: 30px; /* Align to the far right */
+    width: 25px;
+    height: 25px;
+    display: block; /* Visible on smaller screens */
+  }
+
+  /* Navigation Links */
+  .nav-links {
+    display: flex; /* Always visible on tablets */
+    flex-direction: row; /* Align links horizontally */
+    gap: 30px; /* Adjust spacing between links */
+  }
+
+  .nav-links {
+    display: none; /* Hidden by default */
+    align-items: center; /* Center align items horizontally */
+    justify-content: center; /* Center align items vertically */
+    flex-direction: column; /* Stack items vertically */
+    position: absolute; /* Dropdown menu positioning */
+    top: 100%; /* Below the navbar */
+    left: 0;
+    width: 100%; /* Full width */
+    height: auto; /* Adjust height dynamically based on content */
+    background-color: var(--navbar-bg-color); /* Solid background for the menu */
+    padding: 20px 0; /* Add vertical padding around menu items */
+    z-index: 1000; /* Ensure it appears above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Dropdown shadow */
+    gap: 48px; /* Reduced gap between items */
+  }
+
+  /* Show Nav Links When Active */
+  .nav-links.active {
+  display: flex; /* Show the menu when active */
+  height: 100vh;
+  }
+
+  /* Hide Logo When Menu is Active */
+  nav.active .nav-logo {
+  display: none;
+  }
+
+  .nav-links a {
+    font-family: var(--heading-font);
+    text-align: center; /* Ensure text inside links is centered */
+    color: var(--secondary-bg-color); /* Adjust link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.25rem; /* Adjust font size as needed */
+    font-weight: 300; /* Make links bold */
+
+  }
+
+  .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%; /* Start from the center */
+  width: 0;
+  height: 2px;
+  background-color: var(--light-text-color);
+  transition: all 0.3s ease; /* Smooth animation */
+  transform: translateX(-50%); /* Center the line */
+  }
+
+  .nav-links a:hover::after {
+  width: 100%; /* Expand outward from the center */
+  }
+
+  /* Hero Adjustments */
+  .hero {
+    height: 100vh; /* Reduce height to fit smaller screens */
+  }
+
+  /* .hero-bg { */
+  /* animation: none; Disable animation */
+  /* background-image: url('/images/hero/Hero-Amouage.png'); Static fallback image */
+/* } */
+
+  .hero-bg {
+      height: 100vh; /* Adjust height for mobile */
+    }
+
+  .hero-content {
+    padding: 0;
+  }
+
+  .hero-message {
+    font-size: 20px; /* Smaller font size for mobile */
+    line-height: 28px; /* Adjust line height for readability */
+    padding: 10px 16px; /* Add padding for spacing around the text */
+  }
+
+  .hero-button {
+      padding: 12px 20px; /* Reduce button padding */
+      font-size: 14px;
+  }
+
+  /* Heading Banner Adjustments */
+  .heading-banner {
+    padding: 0px 10px; /* Further reduced padding for mobile */
+    height: 120px;
+  }
+
+  .heading-banner h2 {
+    margin-bottom: 0;
+  }
+
+  /* Hero Carousel Adjustments */
+  .carousel {
+    padding: 64px 0;
+  }
+  .carousel-card {
+    width: 250px; /* Further reduced width */
+    height: 300px; /* Further reduced height */
+  }
+
+  .carousel-arrow {
+  display: block; /* Change this once the swipe functionality is active */
+  }
+
+  .brand-name {
+    font-size: 20px /* Adjust font size for mobile */
+  }
+  .view-website-link {
+    font-size: 12px; /* Adjust font size for mobile */
+    padding: 6px 12px; /* Adjust padding for smaller buttons */
+  }
+
+  .left-arrow,
+    .right-arrow {
+      width: 20px; /* Smaller arrows */
+      height: 20px;
+    }
+
+  /* Grid Layout for Retail Section */
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Show two cards per row */
+    gap: 24px; /* Reduce spacing */
+  }
+
+  .small-card {
+    gap: 6px; /* Reduce spacing between image and text */
+    padding: 5px; /* Adjust padding for better fit */
+  }
+
+  /* Retail Section Adjustments */
+  .retail-section {
+    padding: 48px 0px;
+  }
+
+  .retail-container {
+    padding: 0px 32px 0 32px;
+    gap: 28px
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 16px; /* Further reduce gap */
+  }
+
+  .heading-container {
+    text-align: center; /* Align heading and tagline */
+    padding: 0 10px;
+  }
+
+  .heading-container p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+
+  .retail-heading .retail-logo {
+    max-width: 150px; /* Even smaller logo size for mobile */
+  }
+
+  .mall-description {
+    font-size: 16px; /* Smaller font size for mobile */
+    line-height: 16px;
+    padding-left: 8px;
+  }
+
+  .mall-name {
+    font-size: 12px; /* Reduced font size for mobile */
+  }
+
+  .mall-country {
+    font-size: 10px; /* Reduced font size for mobile */
+  }
+
+  .small-card {
+    gap: 12px; /* Space between image and text */
+    padding: 0 10px; /* Reduce side padding */
+  }
+
+  .small-card-image {
+    width: 100%; /* Make the image span the full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 95%; /* Limit width slightly */
+    margin: 0 auto; /* Center-align images */
+  }
+
+    /* Scrolling Logo Bar Adjustments */
+    .scrolling-logo-bar {
+      width: 100%;
+      height: 80px; /* Reduce the height of the bar */
+      padding: 0; /* Reset padding */
+      overflow: hidden; /* Ensure no extra content is shown */
+    }
+
+    .logo-track {
+      height: 80px; /* Adjust track height */
+      gap: 40px; /* Reduce gap between logos */
+      animation: scroll 30s linear infinite; /* Adjust scroll speed */
+    }
+
+    .scrolling-logo-bar .logo {
+      width: 120px;
+      height: 120px; /* Reduce the height of the bar */
+
+    }
+    .scrolling-logo-bar .logo-xxsmall {
+      width: 80px;
+      height: 80px; /* Reduce the height of the bar */
+
+    }
+    .scrolling-logo-bar .tiny {
+      width: 60px;
+      height: 60px; /* Reduce the height of the bar */
+    }
+
+    .scrolling-logo-bar .super-tiny {
+      width: 30px;
+      height: 30px; /* Reduce the height of the bar */
+
+    }
+
+    /* Footer Adjustments */
+    .footer-landing {
+      padding: 30px 20px; /* Reduce padding for smaller screens */
+      gap: 20px; /* Adjust spacing between sections */
+    }
+
+    .footer-nav {
+      flex-direction: column; /* Stack navigation links */
+      justify-content: center;
+      align-items: center;
+      gap: 12px; /* Reduce space between links */
+
+    }
+
+    .footer-nav a {
+      font-size: 12px; /* Smaller font for mobile */
+
+    }
+
+    .footer-connect {
+      flex-direction: crow; /* Stack text and icons */
+      gap: 12px; /* Reduce space */
+    }
+    .footer-connect span {
+      font-size: 14px;
+    }
+
+    .social-icons a img {
+      width: 16px; /* Adjust icon size */
+      height: 16px;
+    }
+
+    .footer-copyright {
+      font-size: 10px; /* Smaller text for mobile */
+    }
+
+  }
+
+
+/* About Page Media Queries Tablets (max-width: 768px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .about-banner, .leadership-banner, .expertise-banner {
+    padding: 60px 50px 0 50px; /* Reduce padding */
+  }
+
+  .banner-image {
+    width: 100%; /* Scale down to fit container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .about-content {
+    padding: 40px 50px 0px 50px; /* Reduce overall padding */
+    gap: 30px; /* Adjust spacing */
+  }
+  .leadership-content{
+    padding: 40px 50px 0px 50px; /* Reduce overall padding */
+    gap: 30px; /* Adjust spacing */
+  }
+   .expertise-content {
+    padding: 40px 50px 40px 50px; /* Reduce overall padding */
+    gap: 30px; /* Adjust spacing */
+  }
+
+  .content-container {
+    max-width: 100%; /* Restrict content width */
+    text-align: center; /* Keep left alignment */
+    gap: 16px; /* Reduce gap between elements */
+    padding: 0 50px;
+  }
+
+  .content-container h2 {
+    font-size: 20px; /* Reduce heading size */
+    line-height: 26px;
+  }
+
+  .about-content p, .leadership-content p, .expertise-content p {
+    font-size: 16px; /* Adjust paragraph font size */
+    line-height: 24px;
+    text-align: left;
+  }
+}
+
+/* About Page Media Queries Mobile (max-width: 599px) */
+/* Mobile (max-width 599px) */
+@media (max-width: 599px) {
+  .about-banner, .leadership-banner, .expertise-banner {
+    padding: 40px 50px 0 50px; /* Reduce padding */
+  }
+
+  .banner-image {
+    width: 100%; /* Scale down to fit container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .about-content {
+    padding: 40px 16px 0px 16px; /* Reduce overall padding */
+    gap: 30px; /* Adjust spacing */
+  }
+
+  .leadership-content{
+    padding: 40px 16px 0px 16px; /* Reduce overall padding */
+    gap: 30px; /* Adjust spacing */
+  }
+   .expertise-content {
+    padding: 40px 16px 40px 16px; /* Reduce overall padding */
+    gap: 30px; /* Adjust spacing */
+  }
+
+  .content-container {
+    max-width: 100%; /* Restrict content width */
+    text-align: center; /* Keep left alignment */
+    gap: 16px; /* Reduce gap between elements */
+    padding: 0 50px;
+  }
+
+  .content-container h2 {
+    font-size: 16px; /* Reduce heading size */
+    line-height: 26px;
+  }
+
+  .about-content p, .leadership-content p, .expertise-content p {
+    font-size: 14px; /* Adjust paragraph font size */
+    line-height: 23px;
+    text-align: left;
+  }
+
+  .expertise-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 148px 68px 148px;
+}
+  }
+
+/* Contact Page Media Queries Tablets Tablets (600px - 1024px) */
+/* Tablets (600px - 1024px) *//* General Adjustments */
+@media (min-width: 600px) and (max-width: 1024px) {
+/* Main Content Section */
+/* Contact Message */
+.contact-content {
+  gap: 20px; /* Standard spacing */
+  padding: 48px 148px 0 148px;
+}
+
+.contact-message {
+  flex-direction: column; /* Align text and button horizontally */
+  justify-content: center; /* Add space between text and button */
+  align-items: center;
+  gap: 0px; /* Space between elements */
+}
+
+.contact-message button {
+  padding: 16px 32px; /* Standard button size */
+  font-size: 16px; /* Standard text size */
+}
+
+/* Careers Section */
+.careers-content {
+  flex-direction: column; /* Align text and button horizontally */
+  justify-content: center; /* Add space between text and button */
+  align-items: center;
+  gap: 20px; /* Standard spacing */
+  padding: 48px 148px 0 148px;
+}
+
+.careers-content h2 {
+  font-size: 22px; /* Adjust heading size */
+  line-height: 30px; /* Adjust line height */
+}
+
+.careers-content p {
+  font-size: 18px; /* Standard paragraph size */
+  line-height: 28px; /* Standard line height */
+  text-align: left;
+}
+
+.global-presence-banner {
+  padding: 48px 148px 48px 148px;
+}
+
+.global-presence-banner h2{
+ font-size: 24px;
+}
+
+.global-presence-banner p{
+ font-size: 16px;
+}
+
+}
+
+/* Contact Page Media Queries Mobile (max-width 599px) */
+/* Mobile (max-width 599px) */
+@media (max-width: 599px) {
+
+  .contact-banner {
+    padding: 40px 50px 0 50px; /* Reduce padding */
+  }
+
+  .banner-image {
+    width: 100%; /* Scale down to fit container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .contact-content {
+    padding: 48px 48px 0 48px;
+    gap: 20px;
+  }
+
+  .contact-message {
+    flex-direction: column; /* Align text and button horizontally */
+    justify-content: center; /* Add space between text and button */
+    align-items: center;
+    gap: 15px; /* Space between elements */
+  }
+
+  .contact-content h2 {
+    font-size: 20px; /* Adjust heading size */
+    line-height: 8px; /* Adjust line height */
+  }
+
+  .contact-message button {
+    padding: 16px 32px; /* Standard button size */
+    font-size: 16px; /* Standard text size */
+  }
+
+  /* Careers Section */
+  .careers-content {
+    padding: 48px 48px 0 48px;
+    gap: 20px;
+  }
+
+  .careers-content h2 {
+    font-size: 20px; /* Adjust heading size */
+    line-height: 8px; /* Adjust line height */
+  }
+
+  .careers-content p {
+    font-size: 18px; /* Standard paragraph size */
+    line-height: 28px; /* Standard line height */
+    text-align: left;
+  }
+
+  .global-presence-banner {
+    padding: 48px 48px 48px 48px;
+  }
+
+
+  .global-presence-banner h2{
+   font-size: 20px;
+   line-height: 8px;
+   padding-bottom: 20px;
+   gap: 0;
+  }
+
+  .global-presence-banner p{
+   font-size: 16px;
+   text-align: left;
+  }
+
+  .global-locations {
+    padding: 10px 0;
+  }
+
+}
+
+/* Brands Page Media Queries-Tablet */
+/* Tablets (600px - 1024px) *//* General Adjustments */
+/* About Page Media Queries Tablets (max-width: 768px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  section.brands {
+    padding: 80px 80px;;
+  }
+
+
+  .brands-heading h1 {
+      font-size: 2rem;
+  }
+
+  .brands-heading p {
+      font-size: 1rem;
+  }
+
+  .brands-gallery {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+  }
+
+  .brand-card {
+      border-radius: 8px;
+  }
+
+  .brand-website-link {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+  }
+}
+
+/* Brands Page Media Queries Mobile (max-width 599px) */
+/* Mobile (max-width 599px) */
+@media (max-width: 599px) {
+  section.brands {
+    padding: 48px 48px;;
+  }
+
+  .brands-heading {
+    margin-bottom: 20px;
+}
+  .brands-heading h1 {
+    font-size: 1.2rem;
+}
+
+.brands-heading p {
+    font-size: 0.8rem;
+}
+
+.brands-gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.brand-card {
+    border-radius: 6px;
+}
+
+.brand-website-link {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+}
+}
