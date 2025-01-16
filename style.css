@@ -180,17 +180,6 @@ nav {
   transform: rotate(-45deg) translateY(0px); /* Rotate bottom line */
 }
 
-/* .instagram-link {
-  display: none;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
-  font-weight: 300;
-  color: #F7F4EF;
-  text-decoration: none;
-  padding: 10px;
-  transition: all 0.3s ease;
-} */
-
 /* Hide "IN" when navbar or hamburger menu is active */
 /* .nav.active .instagram-link,
 .hamburger-menu.active + .instagram-link {
@@ -316,17 +305,18 @@ nav {
 /* Our Brands Styles */
 
 /* Brands Heading */
-.brands-heading {
+.heading {
   font-family: var(--heading-font); /* Assuming heading font is set */
   font-size: 32px; /* Adjust size as needed */
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--primary-text-color);/* Heading text color */
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
 .heading-banner a {
+  font-size: 20x;
   font-family: var(--heading-font);
   font-weight: 400;
 }
@@ -469,8 +459,6 @@ nav {
 .right-arrow {
   right: 10px; /* Position the right arrow */
 }
-
-
 
 /* Retail Section */
 .retail-section {
@@ -726,11 +714,11 @@ nav {
   justify-content: center;
   align-items: center;
   max-width: 100%;
-  padding: 64px 148px 0 148px;
+
 }
 
 .banner-image {
-  max-width: 1200px; /* Set exact width */
+  max-width: 1512px; /* Set exact width */
   height: 418px; /* Set exact height */
   object-fit: cover; /* Ensures the image fills the dimensions without distortion */
 }
@@ -741,7 +729,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 68px 148px 68px 148px;
+  padding: 72px 148px 72px 148px;
   font-family: "Gill Sans";
 }
 
@@ -768,7 +756,7 @@ nav {
   line-height: 28px;
   font-weight: 300;
   color: var(--primary-text-color); /* Example color */
-  text-align: left;
+  text-align: center;
 }
 
 .leadership-banner, .expertise-banner{
@@ -784,7 +772,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 68px 148px 68px 148px;
+  padding: 72px 148px 72px 148px;
 
 }
 
@@ -793,7 +781,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 68px 148px 68px 148px;
+  padding: 72px 148px 72px 148px;
   /* border-bottom: 1px solid black; */
 }
 
@@ -890,18 +878,17 @@ input#slide3:checked ~ .carousel-track {
   max-width: 1512px;
   width: 100%;
   height: auto;
-  padding: 64px 148px 0 148px;
 }
 
 .banner-image {
-  width: 100%; /* Set exact width */
-  height: 500px; /* Set exact height */
+  width: 1512px; /* Set exact width */
+  height: 418px; /* Set exact height */
   object-fit: cover; /* Ensures the image fills the dimensions without distortion */
 }
 
 
 /* Contact Section */
-.contact-content {
+.careers-content {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -911,59 +898,12 @@ input#slide3:checked ~ .carousel-track {
   /* padding-bottom: 30px; */
 }
 
-.contact-message {
+.careers-message {
   display: flex;
   flex-direction: column;
   align-items: center; /* Vertically align text and button */
   gap: 24px; /* Space between the message and the button */
   height: auto; /* Adjust height to fit content */
-}
-
-.contact-content h2 {
-  font-family: var(--heading-font); /* Assuming heading font is set */
-  font-size: 24px; /* Adjust size as needed */
-  font-weight: 400;
-  text-transform: uppercase;
-  text-align: center;
-  color: var(--primary-text-color);/* Heading text color */
-  margin: 0; /* Remove default margin */
-}
-
-.contact-message p {
-  font-family: var(--body-font);
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 28px; /* Ensure consistency with the rest of the text */
-  color: var(--text-color);/* Heading text color */
-  text-align: left;
-}
-
-.contact-message button {
-  color: var(--text-color);/* Heading text color */
-  font-size: 16px;
-  font-weight: 400;
-  background-color: var(--secondary-bg-color);
-  color: var(--text-color);/* Heading text color */
-  padding: 16px 60px;
-  border: 1px solid var(--alt-text-color-2);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.contact-content button:hover {
-  background-color: var(--navbar-bg-color);
-  color:  var(--secondary-bg-color);
-}
-
-/* Careers Section */
-.careers-content {
-  display: flex;
-  flex-direction: column;
-  gap: 8px; /* Space between heading and paragraph */
-  /* border: 3px solid blue; */
-  padding: 56px 148px 0 148px;
-
 }
 
 .careers-content h2 {
@@ -976,13 +916,60 @@ input#slide3:checked ~ .carousel-track {
   margin: 0; /* Remove default margin */
 }
 
-.careers-content p {
+.careers-message p {
+  font-family: var(--body-font);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 300;
+  color: var(--text-color);/* Heading text color */
+  text-align: center;
+}
+
+.careers-message button {
+  color: var(--text-color);/* Heading text color */
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);/* Heading text color */
+  padding: 14px 60px;
+  border: 1px solid var(--alt-text-color-2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.careers-content button:hover {
+  background-color: var(--navbar-bg-color);
+  color:  var(--secondary-bg-color);
+}
+
+/* Careers Section */
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Space between heading and paragraph */
+  /* border: 3px solid blue; */
+  padding: 56px 148px 0 148px;
+
+}
+
+.contact-content h2 {
+  font-family: var(--heading-font); /* Assuming heading font is set */
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--primary-text-color);/* Heading text color */
+  margin: 0; /* Remove default margin */
+}
+
+.contact-content p {
   font-family: "Gill Sans", sans-serif;
   font-size: 18px;
+  line-height: 26px;
   font-weight: 300;
-  line-height: 28px; /* Ensure consistency with the rest of the text */
   color: var(--text-color);
-  text-align: left;
+  text-align: center;
 }
 
 /* Global Presence Banner Section */
@@ -995,9 +982,9 @@ input#slide3:checked ~ .carousel-track {
   flex-direction: column;
   /* border-top: 1px solid black;
   border-bottom: 1px solid black; */
-  justify-content: start;
-  align-items: start;
-  text-align: left;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   gap: 22px; /* Gap between elements */
   margin: 0 auto; /* Centers the banner on the page */
   flex-shrink: 0; /* Prevent shrinking */
@@ -1028,7 +1015,7 @@ input#slide3:checked ~ .carousel-track {
 .global-locations {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
   align-items: center;
   justify-content: center;
   padding: 32px 0px; /* Match padding with other sections */
@@ -1078,9 +1065,11 @@ section.brands {
 }
 
 .brands-heading h1 {
-  font-size: 1.75rem;
+  font-size: 32px;
   font-family: var(--heading-font);
   font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: var(--primary-text-color, #181D27);
   margin-bottom: 10px;
 }
@@ -1147,144 +1136,6 @@ section.brands {
   opacity: 1;
 }
 
-
-/* Home Page Media Queries-Tablet */
-/* Tablets (600px - 1024px) *//* General Adjustments */
-@media (min-width: 600px) and (max-width: 1024px) {
-/* General Adjustments */
-body {
-  font-size: 16px; /* Slightly larger font for better readability */
-  line-height: 1.5;
-}
-/* Navbar */
-/* Navbar Adjustments */
-nav {
-  padding: 40px 50px; /* Adjust padding for tablets */
-  flex-direction: column; /* Align logo and links in a row */
-  justify-content: space-between; /* Space between logo and links */
-  align-items: center; /* Vertically align items */
-}
-
-/* Logo */
-.nav-logo {
-  max-width: 275px; /* Resize logo for tablets */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-  display: none; /* Hide hamburger menu on tablets and larger screens */
-}
-
-/* Navigation Links */
-.nav-links {
-  display: flex; /* Always visible on tablets */
-  flex-direction: row; /* Align links horizontally */
-  gap: 30px; /* Adjust spacing between links */
-}
-
-.nav-links a {
-  text-transform: uppercase; /* Ensure uniform appearance */
-  letter-spacing: 1px; /* Adjust letter spacing for readability */
-  padding: 0; /* Remove extra padding */
-  font-size: 16px; /* Standardize font size for tablet */
-}
-
-/* Hero Adjustments */
-.hero-bg {
-  animation: none; /* Disable animation */
-  background-image: url('/images/hero/Hero-Amouage.png'); /* Static fallback image */
-}
-
-.hero {
-  height: 100vh; /* Reduce height to fit smaller screens */
-}
-
-.hero-content {
-  padding: 0;
-}
-
-.hero-message {
-    font-size: 28px; /* Reduce text size */
-    line-height: 36px;
-}
-
-.hero-button {
-    padding: 12px 20px; /* Reduce button padding */
-    font-size: 14px;
-}
-
-/* Heading Banner Adjustments */
-.heading-banner {
-  height: 150px;
-}
-
-/* Hero Carousel Adjustments */
-.carousel-wrapper {
-  max-width: 100%; /* Allow full width for smaller screens */
-}
-
-.carousel-card {
-  width: 300px; /* Narrower cards for better fit */
-  height: 400px;
-}
-
-.carousel-arrow {
-display: block; /* Hide arrows on smaller screens */
-}
-
-/* Grid Layout for Retail Section */
-.grid-container {
-  grid-template-columns: repeat(2, 1fr); /* Show two cards per row */
-  gap: 24px; /* Reduce spacing */
-}
-
-.small-card {
-  gap: 6px; /* Reduce spacing between image and text */
-  padding: 5px; /* Adjust padding for better fit */
-}
-
-/* Retail Section Adjustments */
-.retail-logo {
-  width: 200px;
-}
-
-.retail-container {
-  padding: 40px 148px; /* Align with carousel section */
-  gap: 24px;
-}
-
-  .retail-description {
-    font-size: 16px; /* Smaller font size for tablets */
-    line-height: 24px;
-  }
-
-  /* Scrolling Logo Bar Adjustments */
-  .scrolling-logo-bar {
-    height: 100px;
-  }
-
-  /* Footer Adjustments */
-  .footer-landing {
-    padding: 50px 20px; /* Reduce padding */
-}
-
-.footer-nav {
-    flex-direction: column; /* Stack links vertically */
-    gap: 12px; /* Reduce spacing */
-}
-
-.footer-bottom {
-    flex-direction: column; /* Stack logo and sitemap */
-    gap: 16px; /* Add space between items */
-}
-
-.footer-logo {
-    max-width: 150px; /* Scale down logo size */
-}
-
-}
-
 /* Home Page Media Queries-Mobile */
 /* Tablets (600px - 1024px) *//* General Adjustments */
 @media (max-width: 599px) {
@@ -1343,13 +1194,18 @@ display: block; /* Hide arrows on smaller screens */
     padding: 20px 0; /* Add vertical padding around menu items */
     z-index: 1000; /* Ensure it appears above other content */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Dropdown shadow */
-    gap: 48px; /* Reduced gap between items */
+    gap: 24px; /* Reduced gap between items */
   }
 
   /* Show Nav Links When Active */
   .nav-links.active {
   display: flex; /* Show the menu when active */
   height: 100vh;
+  }
+
+  .nav-links.active {
+    position: absolute;
+    top: 60%;
   }
 
   /* Hide Logo When Menu is Active */
@@ -1416,11 +1272,20 @@ display: block; /* Hide arrows on smaller screens */
   .heading-banner {
     padding: 0px 10px; /* Further reduced padding for mobile */
     height: 120px;
+    gap: 0;
+
   }
 
-  .heading-banner h2 {
-    margin-bottom: 0;
+  .heading {
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: 400;
   }
+
+  .heading-banner a {
+    font-family: var(--heading-font);
+    font-weight: 400;
+  }
+
 
   /* Hero Carousel Adjustments */
   .carousel {
@@ -1587,298 +1452,110 @@ display: block; /* Hide arrows on smaller screens */
       font-size: 10px; /* Smaller text for mobile */
     }
 
-  }
+    /* About Page Styles */
+    .about-banner, .leadership-banner, .expertise-banner {
+      padding: 0px; /* Reduce padding */
+    }
 
+    .banner-image {
+      width: 100%; /* Scale down to fit container */
+      height: 200px; /* Maintain aspect ratio */
+    }
 
-/* About Page Media Queries Tablets (max-width: 768px) */
-@media (min-width: 600px) and (max-width: 1024px) {
-  .about-banner, .leadership-banner, .expertise-banner {
-    padding: 60px 50px 0 50px; /* Reduce padding */
-  }
+    .about-content, .leadership-content,  .expertise-content{
+      padding: 32px; /* Reduce overall padding */
+      gap: 28px; /* Adjust spacing */
+    }
 
-  .banner-image {
-    width: 100%; /* Scale down to fit container */
-    height: auto; /* Maintain aspect ratio */
-  }
+    .about-content h2, .leadership-content h2, .expertise-content h2 {
+      font-size: 18px; /* Adjust paragraph font size */
+      line-height: 26px;
+      font-weight: 400;
+      text-align: center;
+    }
+    .about-content p, .leadership-content p, .expertise-content p {
+      font-size: 16px; /* Adjust paragraph font size */
+      line-height: 24px;
+      text-align: center;
+    }
 
-  .about-content {
-    padding: 40px 50px 0px 50px; /* Reduce overall padding */
-    gap: 30px; /* Adjust spacing */
-  }
-  .leadership-content{
-    padding: 40px 50px 0px 50px; /* Reduce overall padding */
-    gap: 30px; /* Adjust spacing */
-  }
-   .expertise-content {
-    padding: 40px 50px 40px 50px; /* Reduce overall padding */
-    gap: 30px; /* Adjust spacing */
-  }
+    .expertise-carousel {
+      padding: 0 148px 68px 148px;
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
 
-  .content-container {
-    max-width: 100%; /* Restrict content width */
-    text-align: center; /* Keep left alignment */
-    gap: 16px; /* Reduce gap between elements */
-    padding: 0 50px;
-  }
+    /* Contact Page Styles */
+    .contact-content, .careers-content {
+      padding: 22px 16px 12px 16px; /* Reduce overall padding */
+      gap: 12px; /* Adjust spacing */
+    }
 
-  .content-container h2 {
-    font-size: 20px; /* Reduce heading size */
-    line-height: 26px;
-  }
+    .contact-content h2, .careers-content h2 {
+      font-size: 18px; /* Adjust paragraph font size */
+      line-height: 26px;
+      font-weight: 400;
+      text-align: center;
+    }
+    .contact-content p, .careers-content p {
+      font-size: 16px; /* Adjust paragraph font size */
+      line-height: 24px;
+      text-align: center;
+    }
 
-  .about-content p, .leadership-content p, .expertise-content p {
-    font-size: 16px; /* Adjust paragraph font size */
-    line-height: 24px;
-    text-align: left;
-  }
-}
+    .global-presence-banner {
+      padding: 22px 16px 48px 16px; /* Reduce overall padding */
+    }
 
-/* About Page Media Queries Mobile (max-width: 599px) */
-/* Mobile (max-width 599px) */
-@media (max-width: 599px) {
-  .about-banner, .leadership-banner, .expertise-banner {
-    padding: 40px 50px 0 50px; /* Reduce padding */
-  }
+    .global-presence-banner h2{
+      font-size: 18px; /* Adjust paragraph font size */
+      line-height: 26px;
+      text-align: center;
+    }
 
-  .banner-image {
-    width: 100%; /* Scale down to fit container */
-    height: auto; /* Maintain aspect ratio */
-  }
+    .global-presence-banner p{
+      font-size: 16px; /* Adjust paragraph font size */
+      line-height: 24px;
+      text-align: center;;
+     }
 
-  .about-content {
-    padding: 40px 16px 0px 16px; /* Reduce overall padding */
-    gap: 30px; /* Adjust spacing */
-  }
+     .global-locations {
+      padding: 10px 0;
+    }
 
-  .leadership-content{
-    padding: 40px 16px 0px 16px; /* Reduce overall padding */
-    gap: 30px; /* Adjust spacing */
-  }
-   .expertise-content {
-    padding: 40px 16px 40px 16px; /* Reduce overall padding */
-    gap: 30px; /* Adjust spacing */
-  }
+     .global-locations li{
+      font-size: 16px;
+    }
 
-  .content-container {
-    max-width: 100%; /* Restrict content width */
-    text-align: center; /* Keep left alignment */
-    gap: 16px; /* Reduce gap between elements */
-    padding: 0 50px;
-  }
+    /* Brands Page Styling */
+    .brands-heading h1{
+      font-size: 24px; /* Adjust size as needed */
+      font-weight: 400;
+      text-transform: uppercase;
+    }
 
-  .content-container h2 {
-    font-size: 16px; /* Reduce heading size */
-    line-height: 26px;
-  }
+    .brands-heading p {
+      font-size: 16px;
+      font-family: var(--heading-font);
+      font-weight: 400;
+      color: var(--alt-text-color-2);
+    }
 
-  .about-content p, .leadership-content p, .expertise-content p {
-    font-size: 14px; /* Adjust paragraph font size */
-    line-height: 23px;
-    text-align: left;
-  }
-
-  .expertise-carousel {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 0 148px 68px 148px;
-}
-  }
-
-/* Contact Page Media Queries Tablets Tablets (600px - 1024px) */
-/* Tablets (600px - 1024px) *//* General Adjustments */
-@media (min-width: 600px) and (max-width: 1024px) {
-/* Main Content Section */
-/* Contact Message */
-.contact-content {
-  gap: 20px; /* Standard spacing */
-  padding: 48px 148px 0 148px;
-}
-
-.contact-message {
-  flex-direction: column; /* Align text and button horizontally */
-  justify-content: center; /* Add space between text and button */
-  align-items: center;
-  gap: 0px; /* Space between elements */
-}
-
-.contact-message button {
-  padding: 16px 32px; /* Standard button size */
-  font-size: 16px; /* Standard text size */
-}
-
-/* Careers Section */
-.careers-content {
-  flex-direction: column; /* Align text and button horizontally */
-  justify-content: center; /* Add space between text and button */
-  align-items: center;
-  gap: 20px; /* Standard spacing */
-  padding: 48px 148px 0 148px;
-}
-
-.careers-content h2 {
-  font-size: 22px; /* Adjust heading size */
-  line-height: 30px; /* Adjust line height */
-}
-
-.careers-content p {
-  font-size: 18px; /* Standard paragraph size */
-  line-height: 28px; /* Standard line height */
-  text-align: left;
-}
-
-.global-presence-banner {
-  padding: 48px 148px 48px 148px;
-}
-
-.global-presence-banner h2{
- font-size: 24px;
-}
-
-.global-presence-banner p{
- font-size: 16px;
-}
-
-}
-
-/* Contact Page Media Queries Mobile (max-width 599px) */
-/* Mobile (max-width 599px) */
-@media (max-width: 599px) {
-
-  .contact-banner {
-    padding: 40px 50px 0 50px; /* Reduce padding */
-  }
-
-  .banner-image {
-    width: 100%; /* Scale down to fit container */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  .contact-content {
-    padding: 48px 48px 0 48px;
-    gap: 20px;
-  }
-
-  .contact-message {
-    flex-direction: column; /* Align text and button horizontally */
-    justify-content: center; /* Add space between text and button */
-    align-items: center;
-    gap: 15px; /* Space between elements */
-  }
-
-  .contact-content h2 {
-    font-size: 20px; /* Adjust heading size */
-    line-height: 8px; /* Adjust line height */
-  }
-
-  .contact-message button {
-    padding: 16px 32px; /* Standard button size */
-    font-size: 16px; /* Standard text size */
-  }
-
-  /* Careers Section */
-  .careers-content {
-    padding: 48px 48px 0 48px;
-    gap: 20px;
-  }
-
-  .careers-content h2 {
-    font-size: 20px; /* Adjust heading size */
-    line-height: 8px; /* Adjust line height */
-  }
-
-  .careers-content p {
-    font-size: 18px; /* Standard paragraph size */
-    line-height: 28px; /* Standard line height */
-    text-align: left;
-  }
-
-  .global-presence-banner {
-    padding: 48px 48px 48px 48px;
-  }
-
-
-  .global-presence-banner h2{
-   font-size: 20px;
-   line-height: 8px;
-   padding-bottom: 20px;
-   gap: 0;
-  }
-
-  .global-presence-banner p{
-   font-size: 16px;
-   text-align: left;
-  }
-
-  .global-locations {
-    padding: 10px 0;
-  }
-
-}
-
-/* Brands Page Media Queries-Tablet */
-/* Tablets (600px - 1024px) *//* General Adjustments */
-/* About Page Media Queries Tablets (max-width: 768px) */
-@media (min-width: 600px) and (max-width: 1024px) {
-  section.brands {
-    padding: 80px 80px;;
-  }
-
-
-  .brands-heading h1 {
-      font-size: 2rem;
-  }
-
-  .brands-heading p {
-      font-size: 1rem;
-  }
-
-  .brands-gallery {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+    .brands-gallery {
+      grid-template-columns: 1fr;
+      gap: 10px;
   }
 
   .brand-card {
-      border-radius: 8px;
+      border-radius: 6px;
   }
 
   .brand-website-link {
-      font-size: 0.9rem;
-      padding: 8px 16px;
-  }
-}
-
-/* Brands Page Media Queries Mobile (max-width 599px) */
-/* Mobile (max-width 599px) */
-@media (max-width: 599px) {
-  section.brands {
-    padding: 48px 48px;;
+      font-size: 0.8rem;
+      padding: 6px 12px;
   }
 
-  .brands-heading {
-    margin-bottom: 20px;
-}
-  .brands-heading h1 {
-    font-size: 1.2rem;
-}
-
-.brands-heading p {
-    font-size: 0.8rem;
-}
-
-.brands-gallery {
-    grid-template-columns: 1fr;
-    gap: 10px;
-}
-
-.brand-card {
-    border-radius: 6px;
-}
-
-.brand-website-link {
-    font-size: 0.8rem;
-    padding: 6px 12px;
-}
-}
+  }
