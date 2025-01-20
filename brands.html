@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extravaganza Website 3</title>
+    <title>Brands - Extravaganza</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/nbr5obh.css"> <!-- Gill Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Montserrat -->
@@ -199,14 +199,22 @@
     <p>&copy; 2024 Extravaganza, Inc. All rights reserved.</p>
   </div>
 
-  <!-- Logo and Sitemap -->
-  <!-- <div class="footer-bottom">
-    <img src="/images/Logo Black.svg" alt="Extravaganza Logo" class="footer-logo">
-    <a href="#" class="footer-sitemap">Site Map</a>
-  </div> -->
+
 </footer>
 
+<script>
+  //Hamburger Menu
 
+document.querySelector('.hamburger-menu').addEventListener('click', function () {
+const navLinks = document.querySelector('.nav-links');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const nav = document.querySelector('nav');
+
+navLinks.classList.toggle('active'); // Toggle menu visibility
+hamburgerMenu.classList.toggle('active'); // Toggle cross icon
+nav.classList.toggle('active'); // Toggle nav-specific styling
+});
+</script>
 <script src="script.js"></script>
 
 </body>

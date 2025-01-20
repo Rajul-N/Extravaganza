@@ -5,13 +5,18 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   overflow-x: hidden;
 }
 
 body {
-  font-family: var(--body-font, 'Gill Sans', sans-serif); /* Default body font */
+  font-family: var(
+    --body-font,
+    "Gill Sans",
+    sans-serif
+  ); /* Default body font */
   background-color: var(--primary-bg-color); /* Background color */
   color: var(--text-color); /* Default text color */
   line-height: 1.2; /* Consistent line height */
@@ -20,17 +25,18 @@ body {
 /* CSS Variables */
 :root {
   /* Colors */
-  --primary-bg-color: #F7F4EF; /* Light background color */
-  --secondary-bg-color: #F0EADF; /* Banner background color */
-  --primary-text-color: #181D27; /* Main text color */
+  --primary-bg-color: #f7f4ef; /* Light background color */
+  --secondary-bg-color: #f0eadf; /* Banner background color */
+  --primary-text-color: #181d27; /* Main text color */
   --navbar-bg-color: #1f1f1f; /* Navbar background color */
   --alt-text-color-1: #757b86; /* Alternate text color 1 */
   --alt-text-color-2: #0a0d12; /* Alternate text color 2 */
   --alt-text-color-3: #d8dde5; /* Alternate text color 3 */
+  --alt-text-color-4: #bcbdb6; /* Alternate text color 4 */
 
   /* Fonts */
-  --heading-font: 'Montserrat', sans-serif; /* Heading font */
-  --body-font: 'Gill Sans', sans-serif; /* Body font */
+  --heading-font: "Montserrat", sans-serif; /* Heading font */
+  --body-font: "Gill Sans", sans-serif; /* Body font */
 }
 
 /* General Element Styles */
@@ -39,23 +45,14 @@ a {
   color: inherit; /* Inherit text color */
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none; /* Remove default list styling */
-}
-
-
-/* Hero Container (Combined Nav and Hero) */
-.hero-container {
-  height: 100vh; /* Full viewport height */
-  width: 100%; /* Full viewport width */
-  display: flex;
-  flex-direction: column; /* Stack nav and hero vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
 }
 
 /* Navbar Styles */
 .header {
+  position: relative;
   width: 100%;
   max-width: 100%;
   display: flex;
@@ -64,30 +61,28 @@ ul, ol {
   align-items: center;
   /* border: 8px solid blue; */
   z-index: 100;
-  background-color: #1f1f1f;
+  background-color: var(--navbar-bg-color);
 }
 
 nav {
-  position: sticky;
+  position: absolute; /* Overlay positioning */
   top: 0;
-  z-index: 1000; /* Ensure it stays above other content */
-  width: 100%; /* Full-width navbar */
-  height: auto;
+  width: 100%; /* Full width of the viewport */
+  z-index: 1000; /* Place above the hero section */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center the logo by default */
+  justify-content: center; /* Center the logo */
   padding: 24px 20px;
-  gap: 30px;
-  margin: 0 auto;
-  /* border: 3px solid red; */
+  gap: 16px;
+  background-color: var(--navbar-bg-color); /* Semi-transparent background */
 }
 
 /* Navbar Logo */
 .nav-logo {
   width: 100%; /* Responsive width */
   height: auto; /* Maintain aspect ratio */
-  max-width: 420px; /* Maximum logo width */
+  max-width: 300px; /* Maximum logo width */
   align-self: center;
 }
 
@@ -104,7 +99,7 @@ nav {
 
 .nav-links a {
   font-family: var(--heading-font);
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase; /* Uppercase text */
   color: var(--secondary-bg-color); /* Link text color */
   text-decoration: none; /* Remove underline */
@@ -117,7 +112,7 @@ nav {
 }
 
 .nav-links a:hover {
-  opacity: 0.8; /* Hover effect */
+  font-weight: 500;
 }
 
 /* Hamburger Menu for Mobile */
@@ -133,8 +128,9 @@ nav {
 /* Hamburger Lines (Top, Middle, Bottom) */
 .hamburger-menu::before, /* Top Line */
 .hamburger-menu::after,  /* Bottom Line */
-.hamburger-menu div {    /* Middle Line */
-  content: '';
+.hamburger-menu div {
+  /* Middle Line */
+  content: "";
   position: absolute;
   width: 90%; /* Full width */
   height: 1.75px; /* Line thickness */
@@ -180,58 +176,28 @@ nav {
   transform: rotate(-45deg) translateY(0px); /* Rotate bottom line */
 }
 
-/* Hide "IN" when navbar or hamburger menu is active */
-/* .nav.active .instagram-link,
-.hamburger-menu.active + .instagram-link {
-  opacity: 0;
-  pointer-events: none;
-} */
-
 /* Hero Section Styles */
+/* Ensure the hero section starts at the top of the viewport */
+
+/* Hero Container (Combined Nav and Hero) */
 .hero-container {
-  position: relative;
-  top: 0;
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+  display: flex;
+  flex-direction: column; /* Stack nav and hero vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
 }
 
 .hero {
-  height: 100%; /* Full height of the .hero-container */
-  overflow: hidden; /* Ensure no overflow for animations */
-  display: flex;
-  justify-content: center; /* Center hero content vertically */
-  align-items: center; /* Center hero content horizontally */
-}
-
-/* Background Animation */
-.hero-bg {
-  position: absolute;
+  height: 100vh; /* Full viewport height */
+  position: relative;
   top: 0;
-  left: 0;
-  width: 100%; /* Cover the entire width */
-  height: 100%; /* Cover the entire height */
-  background-size: cover; /* Scale image to cover */
-  background-position: center; /* Center background image */
-  animation: bgAnimation 30s infinite; /* Infinite animation */
-}
-
-/* Keyframes for Image Animation */
-@keyframes bgAnimation {
-  0% { background-image: url('/images/hero/Hero-Amouage.png'); }
-  20% { background-image: url('/images/hero/Hero-Crivelli.png'); }
-  4% { background-image: url('/images/hero/Hero-Nishane.png'); }
-  60% { background-image: url('/images/hero/Hero-Kosmala.png'); }
-  80% { background-image: url('/images/hero/Hero-Signature.png'); }
-  100% { background-image: url('/images/hero/Hero-Amouage.png'); } /* Loop back */
-}
-
-/* Add Webkit Prefix */
-@-webkit-keyframes bgAnimation {
-  0% { background-image: url('/images/hero/Hero-Amouage.png'); }
-  30% { background-image: url('/images/hero/Hero-Crivelli.png'); }
-  45% { background-image: url('/images/hero/Hero-Nishane.png'); }
-  60% { background-image: url('/images/hero/Hero-Kosmala.png'); }
-  75% { background-image: url('/images/hero/Hero-Signature.png'); }
-  90% { background-image: url('/images/hero/Hero-Vilhelm.png'); }
-  100% { background-image: url('/images/hero/Hero-Amouage.png'); }
+  overflow: hidden; /* Prevent content overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center hero content vertically */
+  align-items: center;
 }
 
 /* Hero Content */
@@ -244,10 +210,8 @@ nav {
   max-width: 900px; /* Optional: Limit the maximum width */
   display: flex;
   flex-direction: column; /* Stack elements vertically */
-  justify-content: flex-end; /* Position content towards the bottom */
   align-items: center; /* Center align the content horizontally */
   gap: 16px; /* Space between the message and button */
-
 }
 
 /* Hero Message */
@@ -267,7 +231,7 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 16px 28px; /* Padding inside button */
-  background: var(--secondary-bg-color); /* Default background color */
+  background: white; /* Default background color */
   color: var(--text-color); /* Default text color */
   text-decoration: none; /* Remove underline */
   font-family: var(--heading-font); /* Use heading font */
@@ -283,15 +247,76 @@ nav {
 .hero-button:hover {
   background: var(--navbar-bg-color); /* Change background color */
   color: var(--secondary-bg-color); /* Change text color */
-  border-color: #EEE5DA; /* Add a stroke */
+  border-color: #eee5da; /* Add a stroke */
   cursor: pointer;
 }
 
-/* Brands Banner */
-.heading-banner {
+/* Hero Carousel */
+.carousel-container {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Centers child elements */
+}
+
+.carousel-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0; /* Hide all images initially */
+  transition: opacity 3s ease-in-out; /* Smooth dissolve effect */
+}
+
+.carousel-slide img.active {
+  opacity: 1; /* Show the active image */
+}
+
+/* General Button Styling */
+.carousel-btn {
+  position: absolute;
+  top: 91%; /* Center the button vertically */
+  transform: translateY(-50%);
+  background: none; /* No background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer on hover */
+  z-index: 10; /* Place above carousel images */
+  font-size: 1.5rem; /* Adjust size of the icon */
+  font-weight: 100;
+  color: var(--alt-text-color-3); /* Icon color */
+  transition: color 0.3s ease; /* Smooth hover effect */
+  width: 20px; /* Increase clickable area */
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Left Chevron Button */
+#prevBtn {
+  left: 50px; /* Position on the left */
+}
+
+/* Right Chevron Button */
+#nextBtn {
+  right: 50px; /* Position on the right */
+}
+
+/* Hover Effect */
+.carousel-btn:hover {
+  font-size: 2.5rem; /* Default size of the chevrons */
+  color: white; /* Default chevron color */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth scaling and color transition */
+}
+
+/* Heading Banner Styles - Brands, Retail, Distribution Headings*/
+.banner {
   max-width: 1512px; /* Limits width to 1512px */
   width: 100%; /* Makes it responsive to smaller screens */
-  height: 172px;
+  height: 140px;
   background: var(--secondary-bg-color);
   display: flex;
   flex-direction: column;
@@ -302,170 +327,119 @@ nav {
   flex-shrink: 0; /* Prevent shrinking */
 }
 
-/* Our Brands Styles */
-
-/* Brands Heading */
 .heading {
   font-family: var(--heading-font); /* Assuming heading font is set */
   font-size: 32px; /* Adjust size as needed */
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--primary-text-color);/* Heading text color */
+  color: var(--primary-text-color); /* Heading text color */
   margin: 0;
 }
 
-.heading-banner a {
+.banner a {
   font-size: 20x;
   font-family: var(--heading-font);
   font-weight: 400;
 }
 
+/* Our Brands Styles */
+/* Image Slider */
 
-/* Carousel Section */
-.carousel {
+.swiper-container {
+  position: relative;
   width: 100%;
-  background-color: var(--primary-bg-color); /* Matches your website's background */
-  padding: 72px 0;
-  touch-action: pan-x; /* Allow horizontal touch gestures */
-}
-
-/* Carousel Wrapper */
-.carousel-wrapper {
+  height: 420px;
   display: flex;
-  flex-direction: column; /* Aligns track and arrows vertically */
-  align-items: center; /* Centers arrows horizontally */
-  position: relative; /* For positioning arrows */
-  max-width: 1512px; /* Matches the design width */
-  margin: 0 auto; /* Center the carousel on the page */
-  overflow: hidden; /* Hide extra cards */
-  touch-action: pan-x; /* Ensure horizontal swipe gestures are allowed */
-}
-
-/* Carousel Track */
-.carousel-track {
-  overflow-x: auto; /* Enable horizontal scrolling for the carousel */
-  scroll-snap-type: x mandatory;
-  width: 100%;
-  display: flex;
-  gap: 16px; /* Space between cards */
-  transition: transform 0.5s ease; /* Smooth scrolling */
-  will-change: transform; /* Optimize performance */
-  width: max-content; /* Prevent wrapping issues */
-}
-
-/* Carousel Card */
-.carousel-card {
-  position: relative; /* For positioning inner elements */
-  display: flex;
-  align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  width: 350px;
-  height: 410px;
-  transition: all 0.10s ease; /* Smooth transitions */
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  cursor: pointer;
 }
 
-/* Brand Image */
-.brand-image {
+.swiper-slide img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures images fit without distortion */
-  transition: transform 0.3s ease; /* Smooth scale effect */
+  height: 80%;
+  object-fit: cover;
 }
 
-/* Darken card on hover */
-.carousel-card:hover .brand-image {
-  filter: brightness(0.7);
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 55%;
+  width: 24px;
+  height: 24px;
+  color: #fff; /* Arrow color */
+  background-color: rgba(0, 0, 0, 0.2); /* Background color for buttons */
+  border: 0.4px solid var(--primary-bg-color);
+  border-radius: 50%; /* Optional: Make the button circular */
 }
 
-/* Brand Info Container */
-.brand-info {
-  position: absolute; /* Overlay on top of the card */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Center the container */
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center;
-  justify-content: center;
-  gap: 5px; /* Space between brand name and link */
-  opacity: 0; /* Hidden initially */
-  transition: opacity 0.3s ease; /* Smooth fade-in effect */
-  z-index: 2; /* Ensure it appears above the image */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 12px; /* Arrow size */
+  color: var(--primary-bg-color);
 }
 
-/* Show brand info on hover */
-.carousel-card:hover .brand-info {
-  opacity: 1; /* Make visible */
-}
-
-/* Brand Name */
-.brand-name {
+.swiper-slide h2 {
   font-family: var(--heading-font);
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--secondary-bg-color);
-  text-align: center;
+  color: var(--primary-bg-color);
 }
 
-/* View Website Link */
-.view-website-link {
+.swiper-slide a {
   font-family: var(--heading-font);
-  font-size: 15px;
-  font-weight: 300;
-  color: var(--secondary-bg-color);
-  text-decoration: none;
-  padding: 10px 20px;
-  transition: var(--secondary-bg-color) 0.3s ease, transform 0.3s ease;
-  /* border: 3px solid red; */
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--alt-text-color-4);
 }
 
-.view-website-link:hover {
-  transform: scale(1.1); /* Slight zoom effect */
+.swiper-slide:hover h2,
+.swiper-slide:hover a {
+  visibility: visible; /* Show the info when hovered */
+  opacity: 1; /* Make the info visible */
 }
 
-/* Arrows */
-/* Carousel Arrows */
-.carousel .carousel-arrow {
-  position: absolute;
-  top: 80%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: 1px solid #F7F4EF;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  z-index: 10;
+.swiper-slide:hover img {
+  filter: brightness(60%); /* Reduce the brightness of the image on hover */
 }
 
-.left-arrow {
-  left: 10px;
+.swiper-slide h2,
+.swiper-slide a {
+  position: absolute; /* Position the elements absolutely within .swiper-slide */
+  bottom: 20%; /* Adjust based on desired placement */
+  left: 50%; /* Center align horizontally */
+  transform: translateX(
+    -50%
+  ); /* Center the content relative to its own width */
+  visibility: hidden; /* Initially hidden */
+  opacity: 0; /* Initially invisible */
+  transition: visibility 0s, opacity 0.3s ease-in-out; /* Smooth fade-in effect */
 }
 
-.right-arrow {
-  right: 10px;
+.swiper-slide a {
+  position: absolute; /* Position the elements absolutely within .swiper-slide */
+  bottom: 15%; /* Adjust based on desired placement */
 }
-
-.left-arrow {
-  left: 10px; /* Position the left arrow */
-}
-
-.right-arrow {
-  right: 10px; /* Position the right arrow */
-}
+/* End of Image Slider */
 
 /* Retail Section */
 .retail-section {
   max-width: 1512px; /* Matches design specifications */
   width: 100%; /* Ensures it spans the container */
   margin: 0 auto; /* Centers the section */
-  background-color: var(--primary-bg-color) /* Background color */
+  background-color: var(--primary-bg-color); /* Background color */
 }
 
 /* Retail Container */
@@ -474,7 +448,7 @@ nav {
   flex-direction: column; /* Stack heading and grid */
   padding: 72px 148px; /* Align with carousel section */
   gap: 60px; /* Space between heading and grid */
-  background-color: var(--primary-bg-color) /* Background color */
+  background-color: var(--primary-bg-color); /* Background color */
 }
 
 /* Heading Container */
@@ -511,7 +485,6 @@ nav {
   align-items: center;
   text-align: center; /* Center-align text */
   gap: 10px; /* Space between image and description */
-
 }
 
 /* Image Container */
@@ -558,7 +531,6 @@ nav {
   color: var(--alt-text-color-1);
 }
 
-
 /* Scrolling Logo Bar Section */
 .scrolling-logo-bar {
   width: 1512px;
@@ -587,12 +559,11 @@ nav {
   flex-shrink: 0;
   width: 250px;
   height: 250px;
-
 }
 
 .super-tiny {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 .tiny {
@@ -614,7 +585,6 @@ nav {
   width: 200px;
   height: 200px;
 }
-
 
 /* Scrolling Animation */
 @keyframes scroll {
@@ -659,7 +629,6 @@ nav {
   text-decoration: underline; /* Hover effect */
 }
 
-/* Connect With Us Section */
 .footer-connect {
   display: flex;
   align-items: center;
@@ -708,18 +677,16 @@ nav {
 }
 
 /* About Page Styles */
-
 .about-banner {
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 100%;
-
 }
 
 .banner-image {
   max-width: 1512px; /* Set exact width */
-  height: 418px; /* Set exact height */
+
   object-fit: cover; /* Ensures the image fills the dimensions without distortion */
 }
 
@@ -729,7 +696,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 72px 148px 72px 148px;
+  padding: 72px 120px 72px 120px;
   font-family: "Gill Sans";
 }
 
@@ -739,7 +706,6 @@ nav {
   max-width: 1200px;
   text-align: center;
   gap: 20px;
-
 }
 
 .content-container h2 {
@@ -751,7 +717,9 @@ nav {
   color: var(--primary-text-color); /* Example color */
 }
 
-.about-content p, .leadership-content p, .expertise-content p {
+.about-content p,
+.leadership-content p,
+.expertise-content p {
   font-size: 18px;
   line-height: 28px;
   font-weight: 300;
@@ -759,24 +727,23 @@ nav {
   text-align: center;
 }
 
-.leadership-banner, .expertise-banner{
+.leadership-banner,
+.expertise-banner {
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 100%;
-
 }
 
- .leadership-content {
+.leadership-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 72px 148px 72px 148px;
-
 }
 
- .expertise-content {
+.expertise-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -785,89 +752,56 @@ nav {
   /* border-bottom: 1px solid black; */
 }
 
-/* Expertise Carousel Container */
- .expertise-carousel {
-  position: relative;
+/* Expertise Carousel */
+/* Expertise Carousel Styles */
+.expertise-carousel .swiper-container {
   width: 100%;
-  max-width: 1200px; /* Adjust based on your layout */
-  margin: 0 auto;
-  overflow: hidden;
-  padding: 0 148px 100px 148px;
+  height: 500px; /* Adjust as needed for the desired height */
+  background-color: var(--secondary-bg-color);
+  padding: 40px 0;
 }
 
-/* Carousel Track */
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  gap: 16px; /* Space between cards */
-  overflow: hidden;
+.expertise-carousel .swiper-slide:hover img {
+  filter: none;
 }
 
-/* Carousel Cards */
-.carousel-card {
-  width: 365px; /* Fixed width for the card */
-  height: 473px; /* Fixed height for the card */
-  flex-shrink: 0; /* Prevent cards from shrinking */
-  position: relative;
-  overflow: hidden; /* Hide overflow */
-  display: flex; /* Ensure the card contents are contained */
-  align-items: center; /* Center the image vertically */
-  justify-content: center; /* Center the image horizontally */
+.expertise-carousel .swiper-slide img {
+  width: 100%;
+  object-fit: cover;
 }
 
-.carousel-card img {
-  width: 100%; /* Image should cover the width of the card */
-  height: 100%; /* Image should cover the height of the card */
-  object-fit: cover; /* Ensures the image fills without distortion */
-}
-
-/* Arrows */
-.expertise-carousel .carousel-arrow {
+.expertise-carousel .swiper-button-prev,
+.expertise-carousel .swiper-button-next {
   position: absolute;
-  top: 70%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: var(--secondary-bg-color);
-  border: 1px solid var(--secondary-bg-color);
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  z-index: 10;
+  top: 80%;
+  width: 24px; /* Button size */
+  height: 24px;
+  color: var(--alt-text-color-3); /* Arrow color */
+  background-color: var(
+    --alt-text-color-2 215,
+    42,
+    42,
+    0.8
+  ); /* Background color for buttons */
+  border: 0.4px solid var(--primary-bg-color);
+  border-radius: 50%; /* Optional: Make the button circular */
 }
 
-.left-arrow {
+.expertise-carousel .swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 12px; /* Arrow size */
+  color: var(--primary-bg-color);
+}
+
+.expertise-carousel .swiper-button-prev {
   left: 10px;
 }
 
-.right-arrow {
+.expertise-carousel .swiper-button-next {
   right: 10px;
 }
 
-.carousel-arrow:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.dot.active {
-  background: var(--primary-text-color);
-}
-
-input[type="radio"] {
-  display: none; /* Hide radio buttons */
-}
-
-input#slide1:checked ~ .carousel-track {
-  transform: translateX(0);
-}
-
-input#slide2:checked ~ .carousel-track {
-  transform: translateX(-100%);
-}
-
-input#slide3:checked ~ .carousel-track {
-  transform: translateX(-200%);
-}
-
+/* End of Expertise Carousel
 
 
 /* Contact Page Styles */
@@ -882,10 +816,8 @@ input#slide3:checked ~ .carousel-track {
 
 .banner-image {
   width: 1512px; /* Set exact width */
-  height: 418px; /* Set exact height */
   object-fit: cover; /* Ensures the image fills the dimensions without distortion */
 }
-
 
 /* Contact Section */
 .careers-content {
@@ -912,7 +844,7 @@ input#slide3:checked ~ .carousel-track {
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
-  color: var(--primary-text-color);/* Heading text color */
+  color: var(--primary-text-color); /* Heading text color */
   margin: 0; /* Remove default margin */
 }
 
@@ -921,16 +853,16 @@ input#slide3:checked ~ .carousel-track {
   font-size: 18px;
   line-height: 26px;
   font-weight: 300;
-  color: var(--text-color);/* Heading text color */
+  color: var(--text-color); /* Heading text color */
   text-align: center;
 }
 
 .careers-message button {
-  color: var(--text-color);/* Heading text color */
+  color: var(--text-color); /* Heading text color */
   font-size: 16px;
   font-weight: 400;
   background-color: var(--secondary-bg-color);
-  color: var(--text-color);/* Heading text color */
+  color: var(--text-color); /* Heading text color */
   padding: 14px 60px;
   border: 1px solid var(--alt-text-color-2);
   border-radius: 5px;
@@ -940,7 +872,7 @@ input#slide3:checked ~ .carousel-track {
 
 .careers-content button:hover {
   background-color: var(--navbar-bg-color);
-  color:  var(--secondary-bg-color);
+  color: var(--secondary-bg-color);
 }
 
 /* Careers Section */
@@ -950,7 +882,6 @@ input#slide3:checked ~ .carousel-track {
   gap: 8px; /* Space between heading and paragraph */
   /* border: 3px solid blue; */
   padding: 56px 148px 0 148px;
-
 }
 
 .contact-content h2 {
@@ -959,7 +890,7 @@ input#slide3:checked ~ .carousel-track {
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
-  color: var(--primary-text-color);/* Heading text color */
+  color: var(--primary-text-color); /* Heading text color */
   margin: 0; /* Remove default margin */
 }
 
@@ -997,7 +928,7 @@ input#slide3:checked ~ .carousel-track {
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
-  color: var(--primary-text-color);/* Heading text color */
+  color: var(--primary-text-color); /* Heading text color */
   margin: 0; /* Remove default margin */
   padding-bottom: 12px;
 }
@@ -1034,8 +965,8 @@ input#slide3:checked ~ .carousel-track {
 }
 
 .address-list {
-max-width: 1200px;
-width: 100%;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .global-locations li {
@@ -1050,8 +981,9 @@ width: 100%;
 
 /* Brands */
 /* General Styles */
-section.brands {
-  padding: 50px 20px;
+
+.brands {
+  padding: 100px;
 }
 
 .brands-container {
@@ -1061,7 +993,7 @@ section.brands {
 
 .brands-heading {
   text-align: center;
-  margin-bottom: 40px;
+  margin: 40px;
 }
 
 .brands-heading h1 {
@@ -1070,7 +1002,7 @@ section.brands {
   font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--primary-text-color, #181D27);
+  color: var(--primary-text-color, #181d27);
   margin-bottom: 10px;
 }
 
@@ -1092,7 +1024,6 @@ section.brands {
 .brand-card {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1121,7 +1052,7 @@ section.brands {
   transform: translate(-50%, -50%);
   display: none;
   padding: 10px 20px;
-  color: var(--primary-bg-color, #F7F4EF);
+  color: var(--primary-bg-color, #f7f4ef);
   text-decoration: none;
   font-family: var(--heading-font);
   font-size: 1rem;
@@ -1137,7 +1068,7 @@ section.brands {
 }
 
 /* Home Page Media Queries-Mobile */
-/* Tablets (600px - 1024px) *//* General Adjustments */
+/* Mobile (600px) */ /* General Adjustments */
 @media (max-width: 599px) {
   /* General Adjustments */
   body {
@@ -1146,28 +1077,27 @@ section.brands {
   }
   /* Navbar */
   /* Navbar Adjustments */
+
   nav {
-      display: flex;
-      flex-direction: row; /* Align logo and hamburger menu horizontally */
-      justify-content: center; /* Space between logo and menu */
-      align-items: center;
-      padding: 50px 0px;  /* Adjust padding for smaller screens */
-      position: relative; /* Enable absolute positioning inside the navbar */
-      gap: 0;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Space between logo and menu */
+    align-items: center;
+    padding: 45px 0px; /* Adjust padding for smaller screens */
+    gap: 0;
   }
+
   /* Logo */
   .nav-logo {
-    max-width: 200px; /* Reduce logo size for mobile */
+    max-width: 250px; /* Reduce logo size for mobile */
     height: auto;
-    position: absolute;
-    right: 90px;
-    top: 45px
-}
+  }
 
   /* Hamburger Menu */
   .hamburger-menu {
     position: absolute;
     right: 30px; /* Align to the far right */
+    top: 40px;
     width: 25px;
     height: 25px;
     display: block; /* Visible on smaller screens */
@@ -1190,7 +1120,9 @@ section.brands {
     left: 0;
     width: 100%; /* Full width */
     height: auto; /* Adjust height dynamically based on content */
-    background-color: var(--navbar-bg-color); /* Solid background for the menu */
+    background-color: var(
+      --navbar-bg-color
+    ); /* Solid background for the menu */
     padding: 20px 0; /* Add vertical padding around menu items */
     z-index: 1000; /* Ensure it appears above other content */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Dropdown shadow */
@@ -1199,8 +1131,8 @@ section.brands {
 
   /* Show Nav Links When Active */
   .nav-links.active {
-  display: flex; /* Show the menu when active */
-  height: 100vh;
+    display: flex; /* Show the menu when active */
+    height: 100vh;
   }
 
   .nav-links.active {
@@ -1210,7 +1142,7 @@ section.brands {
 
   /* Hide Logo When Menu is Active */
   nav.active .nav-logo {
-  display: none;
+    display: none;
   }
 
   .nav-links a {
@@ -1220,23 +1152,22 @@ section.brands {
     text-decoration: none; /* Remove underline */
     font-size: 1.25rem; /* Adjust font size as needed */
     font-weight: 300; /* Make links bold */
-
   }
 
   .nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%; /* Start from the center */
-  width: 0;
-  height: 2px;
-  background-color: var(--light-text-color);
-  transition: all 0.3s ease; /* Smooth animation */
-  transform: translateX(-50%); /* Center the line */
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%; /* Start from the center */
+    width: 0;
+    height: 2px;
+    background-color: var(--light-text-color);
+    transition: all 0.3s ease; /* Smooth animation */
+    transform: translateX(-50%); /* Center the line */
   }
 
   .nav-links a:hover::after {
-  width: 100%; /* Expand outward from the center */
+    width: 100%; /* Expand outward from the center */
   }
 
   /* Hero Adjustments */
@@ -1244,28 +1175,26 @@ section.brands {
     height: 100vh; /* Reduce height to fit smaller screens */
   }
 
-  /* .hero-bg { */
-  /* animation: none; Disable animation */
-  /* background-image: url('/images/hero/Hero-Amouage.png'); Static fallback image */
-/* } */
-
-  .hero-bg {
-      height: 100vh; /* Adjust height for mobile */
-    }
-
   .hero-content {
+    position: absolute; /* Allows precise positioning */
+    bottom: 64px; /* Distance from the bottom of the hero */
+    left: 50%; /* Center horizontally */
+    transform: translateX(
+      -50%
+    ); /* Center alignment for horizontal positioning */
     padding: 0;
   }
 
   .hero-message {
     font-size: 20px; /* Smaller font size for mobile */
+    font-weight: 500;
     line-height: 28px; /* Adjust line height for readability */
     padding: 10px 16px; /* Add padding for spacing around the text */
   }
 
   .hero-button {
-      padding: 12px 20px; /* Reduce button padding */
-      font-size: 14px;
+    padding: 12px 20px; /* Reduce button padding */
+    font-size: 14px;
   }
 
   /* Heading Banner Adjustments */
@@ -1273,7 +1202,6 @@ section.brands {
     padding: 0px 10px; /* Further reduced padding for mobile */
     height: 120px;
     gap: 0;
-
   }
 
   .heading {
@@ -1286,7 +1214,6 @@ section.brands {
     font-weight: 400;
   }
 
-
   /* Hero Carousel Adjustments */
   .carousel {
     padding: 64px 0;
@@ -1297,11 +1224,11 @@ section.brands {
   }
 
   .carousel-arrow {
-  display: block; /* Change this once the swipe functionality is active */
+    display: block; /* Change this once the swipe functionality is active */
   }
 
   .brand-name {
-    font-size: 20px /* Adjust font size for mobile */
+    font-size: 20px; /* Adjust font size for mobile */
   }
   .view-website-link {
     font-size: 12px; /* Adjust font size for mobile */
@@ -1309,10 +1236,10 @@ section.brands {
   }
 
   .left-arrow,
-    .right-arrow {
-      width: 20px; /* Smaller arrows */
-      height: 20px;
-    }
+  .right-arrow {
+    width: 20px; /* Smaller arrows */
+    height: 20px;
+  }
 
   /* Grid Layout for Retail Section */
   .grid-container {
@@ -1332,7 +1259,7 @@ section.brands {
 
   .retail-container {
     padding: 0px 32px 0 32px;
-    gap: 28px
+    gap: 28px;
   }
 
   .grid-container {
@@ -1349,7 +1276,6 @@ section.brands {
     font-size: 16px;
     line-height: 24px;
   }
-
 
   .retail-heading .retail-logo {
     max-width: 150px; /* Even smaller logo size for mobile */
@@ -1381,181 +1307,190 @@ section.brands {
     margin: 0 auto; /* Center-align images */
   }
 
-    /* Scrolling Logo Bar Adjustments */
-    .scrolling-logo-bar {
-      width: 100%;
-      height: 80px; /* Reduce the height of the bar */
-      padding: 0; /* Reset padding */
-      overflow: hidden; /* Ensure no extra content is shown */
-    }
+  /* Scrolling Logo Bar Adjustments */
+  .scrolling-logo-bar {
+    width: 100%;
+    height: 80px; /* Reduce the height of the bar */
+    padding: 0; /* Reset padding */
+    overflow: hidden; /* Ensure no extra content is shown */
+  }
 
-    .logo-track {
-      height: 80px; /* Adjust track height */
-      gap: 40px; /* Reduce gap between logos */
-      animation: scroll 30s linear infinite; /* Adjust scroll speed */
-    }
+  .logo-track {
+    height: 80px; /* Adjust track height */
+    gap: 40px; /* Reduce gap between logos */
+    animation: scroll 30s linear infinite; /* Adjust scroll speed */
+  }
 
-    .scrolling-logo-bar .logo {
-      width: 120px;
-      height: 120px; /* Reduce the height of the bar */
+  .scrolling-logo-bar .logo {
+    width: 120px;
+    height: 120px; /* Reduce the height of the bar */
+  }
+  .scrolling-logo-bar .logo-xxsmall {
+    width: 80px;
+    height: 80px; /* Reduce the height of the bar */
+  }
+  .scrolling-logo-bar .tiny {
+    width: 60px;
+    height: 60px; /* Reduce the height of the bar */
+  }
 
-    }
-    .scrolling-logo-bar .logo-xxsmall {
-      width: 80px;
-      height: 80px; /* Reduce the height of the bar */
+  .scrolling-logo-bar .super-tiny {
+    width: 30px;
+    height: 30px; /* Reduce the height of the bar */
+  }
 
-    }
-    .scrolling-logo-bar .tiny {
-      width: 60px;
-      height: 60px; /* Reduce the height of the bar */
-    }
+  /* Footer Adjustments */
+  .footer-landing {
+    padding: 30px 20px; /* Reduce padding for smaller screens */
+    gap: 20px; /* Adjust spacing between sections */
+  }
 
-    .scrolling-logo-bar .super-tiny {
-      width: 30px;
-      height: 30px; /* Reduce the height of the bar */
+  .footer-nav {
+    flex-direction: column; /* Stack navigation links */
+    justify-content: center;
+    align-items: center;
+    gap: 12px; /* Reduce space between links */
+  }
 
-    }
+  .footer-nav a {
+    font-size: 12px; /* Smaller font for mobile */
+  }
 
-    /* Footer Adjustments */
-    .footer-landing {
-      padding: 30px 20px; /* Reduce padding for smaller screens */
-      gap: 20px; /* Adjust spacing between sections */
-    }
+  .footer-connect {
+    flex-direction: crow; /* Stack text and icons */
+    gap: 12px; /* Reduce space */
+  }
+  .footer-connect span {
+    font-size: 14px;
+  }
 
-    .footer-nav {
-      flex-direction: column; /* Stack navigation links */
-      justify-content: center;
-      align-items: center;
-      gap: 12px; /* Reduce space between links */
+  .social-icons a img {
+    width: 16px; /* Adjust icon size */
+    height: 16px;
+  }
 
-    }
+  .footer-copyright {
+    font-size: 10px; /* Smaller text for mobile */
+  }
 
-    .footer-nav a {
-      font-size: 12px; /* Smaller font for mobile */
+  /* About Page Styles */
+  .about-banner,
+  .leadership-banner,
+  .expertise-banner {
+    padding: 0px; /* Reduce padding */
+  }
 
-    }
+  .banner-image {
+    width: 100%; /* Scale down to fit container */
+    height: 200px; /* Maintain aspect ratio */
+  }
 
-    .footer-connect {
-      flex-direction: crow; /* Stack text and icons */
-      gap: 12px; /* Reduce space */
-    }
-    .footer-connect span {
-      font-size: 14px;
-    }
+  .about-content,
+  .leadership-content,
+  .expertise-content {
+    padding: 32px; /* Reduce overall padding */
+    gap: 28px; /* Adjust spacing */
+  }
 
-    .social-icons a img {
-      width: 16px; /* Adjust icon size */
-      height: 16px;
-    }
+  .about-content h2,
+  .leadership-content h2,
+  .expertise-content h2 {
+    font-size: 18px; /* Adjust paragraph font size */
+    line-height: 26px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .about-content p,
+  .leadership-content p,
+  .expertise-content p {
+    font-size: 16px; /* Adjust paragraph font size */
+    line-height: 24px;
+    text-align: center;
+  }
 
-    .footer-copyright {
-      font-size: 10px; /* Smaller text for mobile */
-    }
+  .expertise-carousel {
+    /* padding: 0 148px 68px 148px; */
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
 
-    /* About Page Styles */
-    .about-banner, .leadership-banner, .expertise-banner {
-      padding: 0px; /* Reduce padding */
-    }
+  /* Contact Page Styles */
+  .contact-content,
+  .careers-content {
+    padding: 22px 16px 12px 16px; /* Reduce overall padding */
+    gap: 12px; /* Adjust spacing */
+  }
 
-    .banner-image {
-      width: 100%; /* Scale down to fit container */
-      height: 200px; /* Maintain aspect ratio */
-    }
+  .contact-content h2,
+  .careers-content h2 {
+    font-size: 18px; /* Adjust paragraph font size */
+    line-height: 26px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .contact-content p,
+  .careers-content p {
+    font-size: 16px; /* Adjust paragraph font size */
+    line-height: 24px;
+    text-align: center;
+  }
 
-    .about-content, .leadership-content,  .expertise-content{
-      padding: 32px; /* Reduce overall padding */
-      gap: 28px; /* Adjust spacing */
-    }
+  .global-presence-banner {
+    padding: 22px 16px 48px 16px; /* Reduce overall padding */
+  }
 
-    .about-content h2, .leadership-content h2, .expertise-content h2 {
-      font-size: 18px; /* Adjust paragraph font size */
-      line-height: 26px;
-      font-weight: 400;
-      text-align: center;
-    }
-    .about-content p, .leadership-content p, .expertise-content p {
-      font-size: 16px; /* Adjust paragraph font size */
-      line-height: 24px;
-      text-align: center;
-    }
+  .global-presence-banner h2 {
+    font-size: 18px; /* Adjust paragraph font size */
+    line-height: 26px;
+    text-align: center;
+  }
 
-    .expertise-carousel {
-      padding: 0 148px 68px 148px;
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
+  .global-presence-banner p {
+    font-size: 16px; /* Adjust paragraph font size */
+    line-height: 24px;
+    text-align: center;
+  }
 
-    /* Contact Page Styles */
-    .contact-content, .careers-content {
-      padding: 22px 16px 12px 16px; /* Reduce overall padding */
-      gap: 12px; /* Adjust spacing */
-    }
+  .global-locations {
+    padding: 10px 0;
+  }
 
-    .contact-content h2, .careers-content h2 {
-      font-size: 18px; /* Adjust paragraph font size */
-      line-height: 26px;
-      font-weight: 400;
-      text-align: center;
-    }
-    .contact-content p, .careers-content p {
-      font-size: 16px; /* Adjust paragraph font size */
-      line-height: 24px;
-      text-align: center;
-    }
+  .global-locations li {
+    font-size: 16px;
+  }
 
-    .global-presence-banner {
-      padding: 22px 16px 48px 16px; /* Reduce overall padding */
-    }
+  /* Brands Page Styling */
+  .brands {
+    padding: 20px;
+  }
 
-    .global-presence-banner h2{
-      font-size: 18px; /* Adjust paragraph font size */
-      line-height: 26px;
-      text-align: center;
-    }
+  .brands-heading h1 {
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: 400;
+    text-transform: uppercase;
+  }
 
-    .global-presence-banner p{
-      font-size: 16px; /* Adjust paragraph font size */
-      line-height: 24px;
-      text-align: center;;
-     }
+  .brands-heading p {
+    font-size: 16px;
+    font-family: var(--heading-font);
+    font-weight: 400;
+    color: var(--alt-text-color-2);
+  }
 
-     .global-locations {
-      padding: 10px 0;
-    }
-
-     .global-locations li{
-      font-size: 16px;
-    }
-
-    /* Brands Page Styling */
-    .brands-heading h1{
-      font-size: 24px; /* Adjust size as needed */
-      font-weight: 400;
-      text-transform: uppercase;
-    }
-
-    .brands-heading p {
-      font-size: 16px;
-      font-family: var(--heading-font);
-      font-weight: 400;
-      color: var(--alt-text-color-2);
-    }
-
-    .brands-gallery {
-      grid-template-columns: 1fr;
-      gap: 10px;
+  .brands-gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .brand-card {
-      border-radius: 6px;
+    border-radius: 6px;
   }
 
   .brand-website-link {
-      font-size: 0.8rem;
-      padding: 6px 12px;
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
-
-  }
+}

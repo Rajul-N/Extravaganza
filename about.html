@@ -12,6 +12,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Montserrat -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Swiper.js -->
+    <link
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css"> <!-- Main stylesheet -->
 
@@ -19,29 +24,27 @@
 <body>
 
       <!-- About Section -->
+      <!-- Header -->
+  <section class="header">
+    <nav>
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo-link">
+        <img src="/images/brand logos/Logo Gold.svg" alt="Logo" class="nav-logo">
+      </a>
+      <!-- Hamburger Menu -->
+      <div class="hamburger-menu">
+        <div></div> <!-- Middle Line -->
+    </div>
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Who We Are</a></li>
+          <li><a href="brands.html">Our Brands</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+  </nav>
+</section>
 
-      <section class="header">
-        <nav>
-          <!-- Logo -->
-          <a href="index.html" class="nav-logo-link">
-            <img src="/images/brand logos/Logo Gold.svg" alt="Logo" class="nav-logo">
-          </a>
-          <!-- Hamburger Menu -->
-          <div class="hamburger-menu">
-            <div></div> <!-- Middle Line -->
-        </div>
-          <!-- Instagram Icon -->
-          <!-- <a href="https://www.instagram.com/extravaganzabeaute/" target="_blank" class="instagram-link">IN</a> -->
-
-          <!-- Navigation Links -->
-          <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">Who We Are</a></li>
-              <li><a href="brands.html">Our Brands</a></li>
-              <li><a href="contact.html">Contact</a></li>
-          </ul>
-      </nav>
-    </section>
         <!-- Who we are -->
         <section class="about-banner">
           <img src="/images/about/Amouage-Burj.png" alt="About Banner" class="banner-image">
@@ -77,157 +80,141 @@
             <p>At the heart of Extravaganza's operations lies its core business, which includes prestige and niche beauty distribution, retail services, and the creation of exceptional fragrance brands. This foundation sets the stage for pioneering innovation and excellence within the beauty industry.</p>
           </div>
         </section>
-        <div class="expertise-carousel">
-          <!-- Left Arrow -->
-          <button class="carousel-arrow left-arrow">←</button>
 
-          <!-- Carousel Track -->
-          <div class="carousel-track">
-            <!-- Cards with Images -->
-            <div class="carousel-card">
-              <img src="/images/expertise/m1.png" alt="Image 1 Description">
+        <!-- Expertise Carousel -->
+        <section class="expertise-carousel">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="/images/expertise/a1.png" alt="Image 1"></div>
+              <div class="swiper-slide"><img src="/images/expertise/m3.png" alt="Image 2"></div>
+              <div class="swiper-slide"><img src="/images/expertise/v1.png" alt="Image 3"></div>
+              <div class="swiper-slide"><img src="/images/expertise/k1.png" alt="Image 4"></div>
+              <div class="swiper-slide"><img src="/images/expertise/t1.png" alt="Image 5"></div>
+              <div class="swiper-slide"><img src="/images/expertise/a2.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/m2.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/t2.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/b1.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/v2.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/tk1.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/a3.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/m3.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/t3.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/v3.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/m5.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/v5.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/t5.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/v3.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/tk3.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/m6.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/v6.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/tk4.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/m7.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/t7.png" alt="Image 6"></div>
+              <div class="swiper-slide"><img src="/images/expertise/m8.png" alt="Image 6"></div>
             </div>
-            <div class="carousel-card">
-              <img src="/images/expertise/m2.png" alt="Image 2 Description">
-            </div>
-            <div class="carousel-card">
-              <img src="/images/expertise/m3.png" alt="Image 3 Description">
-            </div>
-            <div class="carousel-card">
-              <img src="/images/expertise/m4.png" alt="Image 3 Description">
-            </div>
-            <div class="carousel-card">
-              <img src="/images/expertise/m5.png" alt="Image 3 Description">
-            </div>
-            <div class="carousel-card">
-              <img src="/images/expertise/m6.png" alt="Image 3 Description">
-            </div>
-            <div class="carousel-card">
-              <img src="/images/expertise/m7.png" alt="Image 3 Description">
-            </div>
-            <div class="carousel-card">
-              <img src="/images/expertise/m8.png" alt="Image 3 Description">
-            </div>
-            <div class="carousel-card">
-              <img src="/images/expertise/m9.png" alt="Image 3 Description">
-            </div>
-            <div class="carousel-card">
-              <img src="/images/expertise/m10.png" alt="Image 3 Description">
-            </div>
-
-            <!-- Repeat up to 10 cards -->
+            <!-- Navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
+        </section>
+        <!-- End of Expertise Carousel -->
 
-          <!-- Right Arrow -->
-          <button class="carousel-arrow right-arrow">→</button>
+
+        <!-- Scroll Bar -->
+        <section class="scrolling-logo-bar">
+          <div class="logo-track">
+            <img src="/images/Scroll bar/bloomingdales.svg" alt="Bloomingdale's Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Harvey Nics.svg" alt="Harvey Nichols Logo" class="logo">
+            <img src="/images/Scroll bar/Tryano.svg" alt="Tryano Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Saks 5th Avenue.svg" alt="Saks Fifth Avenue Logo" class="logo tiny">
+            <img src="/images/Scroll bar/Faces of Canada.svg" alt="Faces Canada Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Laure.svg" alt="Laure Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Sephora.svg" alt="Sephora Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Home of Scent.svg" alt="Home of Scent Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Galleries Lafayette.svg" alt="Galleries Lafayette Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Nordstrom.svg" alt="Nordstrom Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Areej.svg" alt="Areej Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Dillards.svg" alt="Dillards Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Vavavoom.svg" alt="Vavavoom Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Paris Gallery.svg" alt="Paris Gallery Logo" class="logo">
+            <img src="/images/Scroll bar/Harrods.svg" alt="Harrods Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/O100.svg" alt="O100 Logo" class="logo tiny">
+            <img src="/images/Scroll bar/Tsum.svg" alt="Tsum Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Ounass.svg" alt="Ounass Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Atelier Perfumery.svg" alt="Atelier Logo" class="logo logo-small">
+
+            <!-- Duplicate logos for seamless scrolling -->
+
+            <img src="/images/Scroll bar/bloomingdales.svg" alt="Bloomingdale's Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Harvey Nics.svg" alt="Harvey Nichols Logo" class="logo">
+            <img src="/images/Scroll bar/Tryano.svg" alt="Tryano Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Saks 5th Avenue.svg" alt="Saks Fifth Avenue Logo" class="logo tiny">
+            <img src="/images/Scroll bar/Faces of Canada.svg" alt="Faces Canada Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Laure.svg" alt="Laure Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Sephora.svg" alt="Sephora Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Home of Scent.svg" alt="Home of Scent Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Galleries Lafayette.svg" alt="Galleries Lafayette Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Nordstrom.svg" alt="Nordstrom Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Areej.svg" alt="Areej Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Dillards.svg" alt="Dillards Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Vavavoom.svg" alt="Vavavoom Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Paris Gallery.svg" alt="Paris Gallery Logo" class="logo">
+            <img src="/images/Scroll bar/Harrods.svg" alt="Harrods Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/O100.svg" alt="O100 Logo" class="logo tiny">
+            <img src="/images/Scroll bar/Tsum.svg" alt="Tsum Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Ounass.svg" alt="Ounass Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Atelier Perfumery.svg" alt="Atelier Logo" class="logo logo-small">
+
+            <!-- Duplicate logos for seamless scrolling -->
+
+            <img src="/images/Scroll bar/bloomingdales.svg" alt="Bloomingdale's Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Harvey Nics.svg" alt="Harvey Nichols Logo" class="logo">
+            <img src="/images/Scroll bar/Tryano.svg" alt="Tryano Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Saks 5th Avenue.svg" alt="Saks Fifth Avenue Logo" class="logo tiny">
+            <img src="/images/Scroll bar/Faces of Canada.svg" alt="Faces Canada Logo" class="logo logo">
+            <img src="/images/Scroll bar/Laure.svg" alt="Laure Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Sephora.svg" alt="Sephora Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Home of Scent.svg" alt="Home of Scent Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Galleries Lafayette.svg" alt="Galleries Lafayette Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Nordstrom.svg" alt="Nordstrom Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Areej.svg" alt="Areej Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Dillards.svg" alt="Dillards Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Vavavoom.svg" alt="Vavavoom Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Paris Gallery.svg" alt="Paris Gallery Logo" class="logo">
+            <img src="/images/Scroll bar/Harrods.svg" alt="Harrods Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/O100.svg" alt="O100 Logo" class="logo tiny">
+            <img src="/images/Scroll bar/Tsum.svg" alt="Tsum Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Ounass.svg" alt="Ounass Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Atelier Perfumery.svg" alt="Atelier Logo" class="logo logo-small">
+
+            <!-- Duplicate logos for seamless scrolling -->
+
+            <img src="/images/Scroll bar/bloomingdales.svg" alt="Bloomingdale's Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Harvey Nics.svg" alt="Harvey Nichols Logo" class="logo">
+            <img src="/images/Scroll bar/Tryano.svg" alt="Tryano Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Saks 5th Avenue.svg" alt="Saks Fifth Avenue Logo" class="logo tiny">
+            <img src="/images/Scroll bar/Faces of Canada.svg" alt="Faces Canada Logo" class="logo logo">
+            <img src="/images/Scroll bar/Laure.svg" alt="Laure Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Sephora.svg" alt="Sephora Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Home of Scent.svg" alt="Home of Scent Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Galleries Lafayette.svg" alt="Galleries Lafayette Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Nordstrom.svg" alt="Nordstrom Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Areej.svg" alt="Areej Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Dillards.svg" alt="Dillards Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Vavavoom.svg" alt="Vavavoom Logo" class="logo logo-small">
+            <img src="/images/Scroll bar/Paris Gallery.svg" alt="Paris Gallery Logo" class="logo">
+            <img src="/images/Scroll bar/Harrods.svg" alt="Harrods Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/O100.svg" alt="O100 Logo" class="logo tiny">
+            <img src="/images/Scroll bar/Tsum.svg" alt="Tsum Logo" class="logo logo-xxsmall">
+            <img src="/images/Scroll bar/Ounass.svg" alt="Ounass Logo" class="logo logo-xsmall">
+            <img src="/images/Scroll bar/Atelier Perfumery.svg" alt="Atelier Logo" class="logo logo-small">
+
           </div>
-        </div>
-
-        <!-- Our Distribution Section -->
-    <!-- <section class="heading-banner">
-      <h2 class="brands-heading">Our Distribution</h2>
-    </section> -->
-
-    <section class="scrolling-logo-bar">
-      <div class="logo-track">
-        <img src="/images/Scroll bar/bloomingdales.svg" alt="Bloomingdale's Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Harvey Nics.svg" alt="Harvey Nichols Logo" class="logo">
-        <img src="/images/Scroll bar/Tryano.svg" alt="Tryano Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Saks 5th Avenue.svg" alt="Saks Fifth Avenue Logo" class="logo tiny">
-        <img src="/images/Scroll bar/Faces of Canada.svg" alt="Faces Canada Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Laure.svg" alt="Laure Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Sephora.svg" alt="Sephora Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Home of Scent.svg" alt="Home of Scent Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Galleries Lafayette.svg" alt="Galleries Lafayette Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Nordstrom.svg" alt="Nordstrom Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Areej.svg" alt="Areej Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Dillards.svg" alt="Dillards Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Vavavoom.svg" alt="Vavavoom Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Paris Gallery.svg" alt="Paris Gallery Logo" class="logo">
-        <img src="/images/Scroll bar/Harrods.svg" alt="Harrods Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/O100.svg" alt="O100 Logo" class="logo tiny">
-        <img src="/images/Scroll bar/Tsum.svg" alt="Tsum Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Ounass.svg" alt="Ounass Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Logo.svg" alt="Logo Logo" class="logo super-tiny">
-        <img src="/images/Scroll bar/Atelier Perfumery.svg" alt="Atelier Logo" class="logo logo-small">
-
-        <!-- Duplicate logos for seamless scrolling -->
-
-        <img src="/images/Scroll bar/bloomingdales.svg" alt="Bloomingdale's Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Harvey Nics.svg" alt="Harvey Nichols Logo" class="logo">
-        <img src="/images/Scroll bar/Tryano.svg" alt="Tryano Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Saks 5th Avenue.svg" alt="Saks Fifth Avenue Logo" class="logo tiny">
-        <img src="/images/Scroll bar/Faces of Canada.svg" alt="Faces Canada Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Laure.svg" alt="Laure Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Sephora.svg" alt="Sephora Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Home of Scent.svg" alt="Home of Scent Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Galleries Lafayette.svg" alt="Galleries Lafayette Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Nordstrom.svg" alt="Nordstrom Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Areej.svg" alt="Areej Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Dillards.svg" alt="Dillards Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Vavavoom.svg" alt="Vavavoom Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Paris Gallery.svg" alt="Paris Gallery Logo" class="logo">
-        <img src="/images/Scroll bar/Harrods.svg" alt="Harrods Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/O100.svg" alt="O100 Logo" class="logo tiny">
-        <img src="/images/Scroll bar/Tsum.svg" alt="Tsum Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Ounass.svg" alt="Ounass Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Logo.svg" alt="Logo Logo" class="logo super-tiny">
-        <img src="/images/Scroll bar/Atelier Perfumery.svg" alt="Atelier Logo" class="logo logo-small">
-
-        <!-- Duplicate logos for seamless scrolling -->
-
-        <img src="/images/Scroll bar/bloomingdales.svg" alt="Bloomingdale's Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Harvey Nics.svg" alt="Harvey Nichols Logo" class="logo">
-        <img src="/images/Scroll bar/Tryano.svg" alt="Tryano Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Saks 5th Avenue.svg" alt="Saks Fifth Avenue Logo" class="logo tiny">
-        <img src="/images/Scroll bar/Faces of Canada.svg" alt="Faces Canada Logo" class="logo logo">
-        <img src="/images/Scroll bar/Laure.svg" alt="Laure Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Sephora.svg" alt="Sephora Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Home of Scent.svg" alt="Home of Scent Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Galleries Lafayette.svg" alt="Galleries Lafayette Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Nordstrom.svg" alt="Nordstrom Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Areej.svg" alt="Areej Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Dillards.svg" alt="Dillards Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Vavavoom.svg" alt="Vavavoom Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Paris Gallery.svg" alt="Paris Gallery Logo" class="logo">
-        <img src="/images/Scroll bar/Harrods.svg" alt="Harrods Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/O100.svg" alt="O100 Logo" class="logo tiny">
-        <img src="/images/Scroll bar/Tsum.svg" alt="Tsum Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Ounass.svg" alt="Ounass Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Logo.svg" alt="Logo Logo" class="logo super-tiny">
-        <img src="/images/Scroll bar/Atelier Perfumery.svg" alt="Atelier Logo" class="logo logo-small">
-
-        <!-- Duplicate logos for seamless scrolling -->
-
-        <img src="/images/Scroll bar/bloomingdales.svg" alt="Bloomingdale's Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Harvey Nics.svg" alt="Harvey Nichols Logo" class="logo">
-        <img src="/images/Scroll bar/Tryano.svg" alt="Tryano Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Saks 5th Avenue.svg" alt="Saks Fifth Avenue Logo" class="logo tiny">
-        <img src="/images/Scroll bar/Faces of Canada.svg" alt="Faces Canada Logo" class="logo logo">
-        <img src="/images/Scroll bar/Laure.svg" alt="Laure Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Sephora.svg" alt="Sephora Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Home of Scent.svg" alt="Home of Scent Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Galleries Lafayette.svg" alt="Galleries Lafayette Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Nordstrom.svg" alt="Nordstrom Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Areej.svg" alt="Areej Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Dillards.svg" alt="Dillards Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Vavavoom.svg" alt="Vavavoom Logo" class="logo logo-small">
-        <img src="/images/Scroll bar/Paris Gallery.svg" alt="Paris Gallery Logo" class="logo">
-        <img src="/images/Scroll bar/Harrods.svg" alt="Harrods Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/O100.svg" alt="O100 Logo" class="logo tiny">
-        <img src="/images/Scroll bar/Tsum.svg" alt="Tsum Logo" class="logo logo-xxsmall">
-        <img src="/images/Scroll bar/Ounass.svg" alt="Ounass Logo" class="logo logo-xsmall">
-        <img src="/images/Scroll bar/Logo.svg" alt="Logo Logo" class="logo super-tiny">
-        <img src="/images/Scroll bar/Atelier Perfumery.svg" alt="Atelier Logo" class="logo logo-small">
-
-
-
-
-      </div>
-    </section>
+        </section>
 
       </main>
 
+      <!-- Footer -->
       <footer class="footer-landing">
         <!-- Navigation Links -->
         <div class="footer-nav">
@@ -253,18 +240,46 @@
 
       </footer>
 
-      <!-- <script src="script.js">document.querySelector('.hamburger-menu').addEventListener('click', function () {
-        const navLinks = document.querySelector('.nav-links');
-        const hamburgerMenu = document.querySelector('.hamburger-menu');
-        const nav = document.querySelector('nav');
 
-        navLinks.classList.toggle('active'); // Toggle menu visibility
-        hamburgerMenu.classList.toggle('active'); // Toggle cross icon
-        nav.classList.toggle('active'); // Toggle nav-specific styling
-      });
-      </script> -->
+      <!-- JavaScript -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var expertiseSwiper = new Swiper('.expertise-carousel .swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            navigation: {
+              nextEl: '.expertise-carousel .swiper-button-next',
+              prevEl: '.expertise-carousel .swiper-button-prev',
+            },
+            breakpoints: {
+              600: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 20,
+              },
+            },
+          });
+        });
+      </script>
 
+
+      <script>
+            //Hamburger Menu
+
+document.querySelector('.hamburger-menu').addEventListener('click', function () {
+  const navLinks = document.querySelector('.nav-links');
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const nav = document.querySelector('nav');
+
+  navLinks.classList.toggle('active'); // Toggle menu visibility
+  hamburgerMenu.classList.toggle('active'); // Toggle cross icon
+  nav.classList.toggle('active'); // Toggle nav-specific styling
+});
+      </script>
       <script src="script.js"></script>
-      <script src="carousel.js"></script>
 </body>
 </html>
