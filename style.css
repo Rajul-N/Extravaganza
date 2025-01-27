@@ -1391,6 +1391,7 @@ nav {
   .leadership-banner,
   .expertise-banner {
     padding: 0px; /* Reduce padding */
+    height: auto;
   }
 
   .banner-image {
@@ -1431,6 +1432,12 @@ nav {
   }
 
   /* Contact Page Styles */
+
+  .contact-banner {
+    padding: 0px; /* Reduce padding */
+    height: auto;
+  }
+
   .contact-content,
   .careers-content {
     padding: 28px 16px 12px 16px; /* Reduce overall padding */
