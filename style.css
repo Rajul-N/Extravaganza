@@ -968,7 +968,7 @@ nav {
   text-align: center;
   align-items: center;
   justify-content: center;
-  padding: 32px 0px; /* Match padding with other sections */
+  padding: 24px 0px 100px 0px; /* Match padding with other sections */
 }
 
 .global-locations ul {
