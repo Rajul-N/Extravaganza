@@ -105,6 +105,7 @@ nav {
   text-decoration: none; /* Remove underline */
   font-size: 14px; /* Font size */
   letter-spacing: 2px; /* Space between letters */
+  transition: color 0.3s ease;
 }
 
 .nav-links.active {
@@ -113,6 +114,11 @@ nav {
 
 .nav-links a:hover {
   font-weight: 500;
+}
+
+/* Active link styling */
+.nav-links a.active {
+ opacity: 70%;
 }
 
 /* Hamburger Menu for Mobile */

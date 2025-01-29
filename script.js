@@ -238,3 +238,24 @@ document
     hamburgerMenu.classList.toggle("active"); // Toggle cross icon
     nav.classList.toggle("active"); // Toggle nav-specific styling
   });
+
+
+
+
+  // const navLinkEls = document.querySelectorAll('.nav-link');
+  // const windowPathname = window.location.pathname;
+
+  // navLinkEls.forEach(navLinkEl => {
+  //   if (navLinkEl.href.includes(windowPathname)) {
+  //     navLinkEl.classList.add('active');
+  //   }
+  // })
+  const navLinkEls = document.querySelectorAll('.nav-links a'); // Select all <a> inside .nav-links
+const windowPathname = window.location.pathname;
+
+navLinkEls.forEach(navLinkEl => {
+  const navPath = new URL(navLinkEl.href).pathname; // Get the pathname of the nav link
+  if (navPath === windowPathname) {
+    navLinkEl.classList.add('active'); // Add the 'active' class to the matching link
+  }
+});
